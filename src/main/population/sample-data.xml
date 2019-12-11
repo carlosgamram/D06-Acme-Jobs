@@ -1784,6 +1784,7 @@
 		<property name="firm" value="firm01"/>
 		<property name="responsibility" value="responsibility01"/>
 		<property name="status"><null/></property>
+		<property name="authenticated" ref="employer03Authenticated"/>
 	</bean>
 	
 		<!-- Auditorrequestd02 -->
@@ -1792,6 +1793,7 @@
 		<property name="firm" value="firm02"/>
 		<property name="responsibility" value="responsibility02"/>
 		<property name="status" value="true"/>
+		<property name="authenticated" ref="employer04Authenticated"/>
 	</bean>
 	
 		<!-- Auditorrequestd03 -->
@@ -1800,6 +1802,7 @@
 		<property name="firm" value="firm03"/>
 		<property name="responsibility" value="responsibility03"/>
 		<property name="status" value="false"/>
+		<property name="authenticated" ref="employer01Authenticated"/>
 	</bean>
 	
 	<!-- Banners -->	

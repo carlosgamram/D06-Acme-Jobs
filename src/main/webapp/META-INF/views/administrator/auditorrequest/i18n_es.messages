@@ -11,7 +11,12 @@
 administrator.auditorrequest.list.label.firm = Firma
 administrator.auditorrequest.list.label.responsibility = Declaración de responsabilidad
 
+administrator.auditorrequest.form.lable.authenticated.userAccount.Username = Nombre del usuario
 administrator.auditorrequest.form.lable.firm = Firma
 administrator.auditorrequest.form.lable.responsibility = Declaración de responsabilidad
 administrator.auditorrequest.form.lable.status = Estado
 administrator.auditorrequest.form.button.return = Volver
+
+administrator.auditorrequest.form.lable.selection = Selecciona
+administrator.auditorrequest.form.lable.selection.accept = Aceptar
+administrator.auditorrequest.form.lable.selection.reject = Rechazar

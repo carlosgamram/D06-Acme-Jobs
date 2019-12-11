@@ -11,7 +11,12 @@
 administrator.auditorrequest.list.label.firm = Firm
 administrator.auditorrequest.list.label.responsibility = Responsibility statement
 
+administrator.auditorrequest.form.lable.authenticated.userAccount.Username = User Name
 administrator.auditorrequest.form.lable.firm = Firm
 administrator.auditorrequest.form.lable.responsibility = Responsibility statement 
 administrator.auditorrequest.form.lable.status = Status
 administrator.auditorrequest.form.button.return = Return
+
+administrator.auditorrequest.form.lable.selection = Selection
+administrator.auditorrequest.form.lable.selection.accept = Accept
+administrator.auditorrequest.form.lable.selection.reject = Reject

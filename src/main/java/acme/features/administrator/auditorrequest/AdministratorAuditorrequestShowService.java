@@ -29,7 +29,7 @@ public class AdministratorAuditorrequestShowService implements AbstractShowServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "firm", "responsibility", "status");
+		request.unbind(entity, model, "firm", "responsibility", "authenticated.userAccount.Username");
 
 	}
 
