@@ -1486,7 +1486,7 @@
 		<property name="title" value="title05"/>
 		<property name="users">
 			<list>
-				<ref bean="employer05Authenticated"/>
+				<ref bean="employer04Authenticated"/>
 				<ref bean="auditor05Authenticated"/>
 				<ref bean="employer08Authenticated"/>
 				<ref bean="sponsor06Authenticated"/>
@@ -1502,7 +1502,7 @@
 		<property name="title" value="title04"/>
 		<property name="users">
 			<list>
-				<ref bean="employer01Authenticated"/>
+				<ref bean="sponsor07Authenticated"/>
 				<ref bean="employer02Authenticated"/>
 				<ref bean="sponsor03Authenticated"/>
 				<ref bean="employer04Authenticated"/>
@@ -1519,7 +1519,7 @@
 		<property name="title" value="title03"/>
 		<property name="users">
 			<list>
-				<ref bean="worker06Authenticated"/>
+				<ref bean="worker01Authenticated"/>
 				<ref bean="auditor03Authenticated"/>
 				<ref bean="employer02Authenticated"/>
 				<ref bean="sponsor02Authenticated"/>

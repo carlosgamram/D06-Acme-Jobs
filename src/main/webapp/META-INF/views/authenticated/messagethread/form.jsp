@@ -15,17 +15,22 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
 	<acme:form-textbox code="authenticated.messagethread.form.lable.owner.identity.fullName" path="owner.identity.fullName"/>
 	<acme:form-textbox code="authenticated.messagethread.form.lable.title" path="title"/>
-	<acme:form-moment code="authenticated.messagethread.form.lable.creationMoment" path="creationMoment"/>
+	<jstl:if test="${command != 'create'}">
+		<acme:form-moment 
+			code="authenticated.messagethread.list.label.creationMoment" 
+			path="creationMoment"
+			readonly= "true"/>
+	</jstl:if>
 </acme:form>
 
 <acme:form>
 
 	<acme:form-submit test="${command == 'create'}" 
-		code="administrator.announcement.form.button.create" 
-		action="/administrator/announcement/create"/>
+		code="authenticated.messagethread.form.button.create" 
+		action="/authenticated/messagethread/create"/>
 
 	<acme:form-submit 
 		method="get" 
