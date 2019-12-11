@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="false">
+<acme:form>
 	<acme:form-textbox code="administrator.auditorrequest.form.lable.firm" path="firm"/>
 	<acme:form-textbox code="administrator.auditorrequest.form.lable.responsibility" path="responsibility"/>
 	<acme:form-textbox code="administrator.auditorrequest.form.lable.authenticated.userAccount.Username" path="authenticated.userAccount.Username"/>
