@@ -9,6 +9,11 @@
 	<acme:list-column code="sponsor.noncommercial.list.label.url" path="url" width="15%"/>
 </acme:list>
 
-
+<acme:form>
+		<acme:form-submit 
+		method="get" 
+		code="sponsor.noncommercial.list.button.create" 
+		action="/sponsor/noncommercial/create"/>
+</acme:form>
 
 

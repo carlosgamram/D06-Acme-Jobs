@@ -7,11 +7,17 @@ sponsor.commercial.form.label.creditCardMonth = Mes de caducidad
 sponsor.commercial.form.label.creditCardYear = Año de caducidad
 sponsor.commercial.form.label.creditCardName = Nombre del propietario
 sponsor.commercial.form.label.creditCardNumber = Número de la tarjeta
-sponsor.commercial.form.label.creditCardType= Tipo de la tarjeta
+sponsor.commercial.form.label.creditCardType = Tipo de la tarjeta
+sponsor.commercial.form.label.creditCardCVV = CVV
 
 sponsor.commercial.form.button.return = Volver
+sponsor.commercial.form.button.create = Crear
+sponsor.commercial.form.button.delete = Borrar
+sponsor.commercial.form.button.update = Actualizar
 
 #List-tags----------------------------------------------------------------------
 sponsor.commercial.list.label.slogan = Eslogan
 sponsor.commercial.list.label.picture = Imagen
 sponsor.commercial.list.label.url = URL
+
+sponsor.commercial.list.button.create = Crear

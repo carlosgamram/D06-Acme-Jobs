@@ -8,3 +8,10 @@
 	<acme:list-column code="sponsor.commercial.list.label.picture" path="picture" width="30%"/>
 	<acme:list-column code="sponsor.commercial.list.label.url" path="url" width="30%"/>
 </acme:list>
+
+<acme:form>
+		<acme:form-submit 
+		method="get" 
+		code="sponsor.commercial.list.button.create" 
+		action="/sponsor/commercial/create"/>
+</acme:form>
