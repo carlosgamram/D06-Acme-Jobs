@@ -34,7 +34,7 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "owner", "title", "creationMoment");
+		request.bind(entity, errors, "creationMoment");
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "owner", "title", "creationMoment");
+		request.unbind(entity, model, "owner", "title");
 	}
 
 	@Override
