@@ -1778,6 +1778,14 @@
 		<property name="job" ref="job01"/>
 	</bean>
 	
+	<!-- Auditorrequestd01 -->
+	
+	<bean id="auditorrequest01" class="acme.entities.auditorrequest.Auditorrequest">
+		<property name="firm" value="firm01"/>
+		<property name="responsibility" value="responsibility01"/>
+		<property name="status"><null/></property>
+	</bean>
+	
 	<!-- Banners -->	
 	
 	<bean id="commercial01" class="acme.entities.banners.Commercial">

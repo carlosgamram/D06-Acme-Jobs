@@ -97,6 +97,8 @@
 
     drop table if exists `auditor`;
 
+    drop table if exists `auditorrequest`;
+
     drop table if exists `auditrecord`;
 
     drop table if exists `authenticated`;

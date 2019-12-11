@@ -46,6 +46,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditorrequest` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `responsibility` varchar(255),
+        `status` bit,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `auditrecord` (
        `id` integer not null,
         `version` integer not null,
@@ -283,6 +292,8 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);
@@ -293,6 +304,7 @@ create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 
     alter table `companyrecord` 
        add constraint UK_7vrl4nc296g6ijlp9s5i4yg25 unique (`phone`);
+create index IDXt84ibbldao4ngscmvo7ja0es on `job` (`final_mode`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
