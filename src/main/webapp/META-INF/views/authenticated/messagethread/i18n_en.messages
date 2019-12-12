@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.messagethread.form.lable.owner.identity.fullName=Full name of the owner
+authenticated.messagethread.form.lable.owner.identity.fullName = Full name of the owner
 
 authenticated.messagethread.list.label.title = Title
 authenticated.messagethread.list.label.creationMoment = Creation Moment
@@ -16,7 +16,8 @@ authenticated.messagethread.list.label.creationMoment = Creation Moment
 authenticated.messagethread.form.lable.title = Title
 authenticated.messagethread.form.lable.creationMoment = Creation Moment
 
+authenticated.messagethread.form.button.create = Create
 authenticated.messagethread.form.button.return = Return
-authenticated.messagethread.form.button.message = Message
-authenticated.messagethread.form.button.authenticated.list = List Auditor
+authenticated.messagethread.form.button.message = Messages
+authenticated.messagethread.form.button.authenticated.list = List users involved
 authenticated.messagethread.form.button.authenticated.show = Show Owner
