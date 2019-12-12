@@ -7,7 +7,14 @@ sponsor.noncommercial.form.label.jingle = Jingle
 
 sponsor.noncommercial.form.button.return = Return
 
+sponsor.noncommercial.form.button.return = Volver
+sponsor.noncommercial.form.button.create = Crear
+sponsor.noncommercial.form.button.delete = Borrar
+sponsor.noncommercial.form.button.update = Actualizar
+
 #List-tags----------------------------------------------------------------------
 sponsor.noncommercial.list.label.slogan = Slogan
 sponsor.noncommercial.list.label.picture = Picture
 sponsor.noncommercial.list.label.url = URL
+
+sponsor.noncommercial.list.button.create = Crear
