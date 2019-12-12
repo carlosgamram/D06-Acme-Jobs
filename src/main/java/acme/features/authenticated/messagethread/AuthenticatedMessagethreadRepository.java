@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.messagethreads.Messagethread;
+import acme.framework.entities.Authenticated;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -17,5 +18,8 @@ public interface AuthenticatedMessagethreadRepository extends AbstractRepository
 
 	@Query("select mt from Messagethread mt join mt.users u where u.id=?1 ")
 	Collection<Messagethread> findManyMine(int id);
+
+	@Query("select a from Authenticated a where a.id = ?1")
+	Authenticated findAuthenticatedById(int id);
 
 }

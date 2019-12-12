@@ -8,9 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.worker.worker.form.label.firm = Firm
-authenticated.worker.worker.form.label.responsibility = Responsibility statement
+authenticated.auditorrequest.form.label.firm = Firm
+authenticated.auditorrequest.form.label.responsibility = Responsibility
 
-authenticated.worker.worker.form.button.create = Register
-authenticated.worker.worker.form.button.update = Update
-authenticated.worker.worker.form.button.return = Return
+authenticated.auditorrequest.form.button.create = Register
+authenticated.auditorrequest.form.button.update = Update
+authenticated.auditorrequest.form.button.return = Return

@@ -1,7 +1,6 @@
 
 package acme.features.authenticated.messagethread;
 
-import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,14 +42,18 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "owner", "title");
+		request.unbind(entity, model, "owner", "title", "creationMoment");
 	}
 
 	@Override
 	public Messagethread instantiate(final Request<Messagethread> request) {
 		Messagethread result;
 
+		int id = request.getPrincipal().getAccountId();
+		Authenticated auth = this.repository.findAuthenticatedById(id);
+
 		result = new Messagethread();
+		result.setOwner(auth);
 
 		return result;
 	}
@@ -65,11 +68,8 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 	@Override
 	public void create(final Request<Messagethread> request, final Messagethread entity) {
 		Date moment;
-		Collection<Authenticated> users = null;
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(moment);
-		users.add(entity.getOwner());
-		entity.setUsers(users);
 		this.repository.save(entity);
 
 	}

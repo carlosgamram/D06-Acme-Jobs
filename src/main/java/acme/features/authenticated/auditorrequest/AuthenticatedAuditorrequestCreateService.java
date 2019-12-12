@@ -47,7 +47,12 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 	public Auditorrequest instantiate(final Request<Auditorrequest> request) {
 		Auditorrequest result;
 
+		int id = request.getPrincipal().getActiveRoleId();
+
+		Authenticated auth = this.repository.findAuthenticatedById(id);
+
 		result = new Auditorrequest();
+		result.setAuthenticated(auth);
 
 		return result;
 	}
@@ -62,7 +67,6 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 
 	@Override
 	public void create(final Request<Auditorrequest> request, final Auditorrequest entity) {
-
 		this.repository.save(entity);
 
 	}

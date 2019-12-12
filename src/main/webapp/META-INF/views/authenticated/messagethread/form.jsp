@@ -16,7 +16,6 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.messagethread.form.lable.owner.identity.fullName" path="owner.identity.fullName"/>
 	<acme:form-textbox code="authenticated.messagethread.form.lable.title" path="title"/>
 	<jstl:if test="${command != 'create'}">
 		<acme:form-moment 
@@ -24,25 +23,22 @@
 			path="creationMoment"
 			readonly= "true"/>
 	</jstl:if>
-</acme:form>
-
-<acme:form>
 
 	<acme:form-submit test="${command == 'create'}" 
 		code="authenticated.messagethread.form.button.create" 
 		action="/authenticated/messagethread/create"/>
 
-	<acme:form-submit 
+	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.authenticated.show" 
 		action="/authenticated/authenticated/show?id=${owner.id}"/>
 	
-	<acme:form-submit 
+	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.authenticated.list" 
 		action="/authenticated/authenticated/list?id=${id}"/>
 		
-	<acme:form-submit 
+	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.message" 
 		action="/authenticated/message/list?id=${id}"/>
