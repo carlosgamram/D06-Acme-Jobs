@@ -43,6 +43,7 @@ master.menu.administrator.dashboard = Panel
 master.menu.administrator.announcement = Anuncios
 master.menu.administrator.challenge = Retos
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.auditorrequest = Listar solicitudes de auditor
 master.menu.administrator.spam = Palabras spam
 master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.investorrecord = Inversiones
@@ -110,6 +111,10 @@ master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.worker = Datos de trabajador
 master.menu.user-account.become-employer = Hazte empleado
 master.menu.user-account.employer = Datos de empleado
+master.menu.user-account.auditorrequest = Solicita ser auditor
+master.menu.user-account.auditor = Datos de auditor
+master.menu.user-account.become-sponsor = Hazte sponsor
+master.menu.user-account.sponsor = Datos de sponsor
 
 # master.footer ###############################################################
 

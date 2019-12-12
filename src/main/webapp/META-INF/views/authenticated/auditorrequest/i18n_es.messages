@@ -8,12 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.worker.form.title.create = Hazte trabajador
-authenticated.worker.form.title.update = Actualiza tus datos 
+authenticated.auditorrequest.form.label.firm = Firma
+authenticated.auditorrequest.form.label.responsibility = Responsabilidades
 
-authenticated.worker.form.label.qualifications = Cualificaciones
-authenticated.worker.form.label.skills = Habilidades
-
-authenticated.worker.form.button.create = Registrate
-authenticated.worker.form.button.update = Actualiza
-authenticated.worker.form.button.return = Volver
+authenticated.auditorrequest.form.button.create = Registrate
+authenticated.auditorrequest.form.button.update = Actualiza
+authenticated.auditorrequest.form.button.return = Volver

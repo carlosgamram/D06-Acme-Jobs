@@ -1,4 +1,4 @@
-# i18n_es.messages
+# i18n_en.messages
 #
 # Copyright (c) 2019 Rafael Corchuelo.
 #
@@ -8,12 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.worker.form.title.create = Hazte trabajador
-authenticated.worker.form.title.update = Actualiza tus datos 
+authenticated.worker.worker.form.label.firm = Firm
+authenticated.worker.worker.form.label.responsibility = Responsibility statement
 
-authenticated.worker.form.label.qualifications = Cualificaciones
-authenticated.worker.form.label.skills = Habilidades
-
-authenticated.worker.form.button.create = Registrate
-authenticated.worker.form.button.update = Actualiza
-authenticated.worker.form.button.return = Volver
+authenticated.worker.worker.form.button.create = Register
+authenticated.worker.worker.form.button.update = Update
+authenticated.worker.worker.form.button.return = Return

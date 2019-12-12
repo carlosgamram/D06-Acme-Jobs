@@ -1778,6 +1778,33 @@
 		<property name="job" ref="job01"/>
 	</bean>
 	
+	<!-- Auditorrequestd01 -->
+	
+	<bean id="auditorrequest01" class="acme.entities.auditorrequest.Auditorrequest">
+		<property name="firm" value="firm01"/>
+		<property name="responsibility" value="responsibility01"/>
+		<property name="status"><null/></property>
+		<property name="authenticated" ref="employer03Authenticated"/>
+	</bean>
+	
+		<!-- Auditorrequestd02 -->
+	
+	<bean id="auditorrequest02" class="acme.entities.auditorrequest.Auditorrequest">
+		<property name="firm" value="firm02"/>
+		<property name="responsibility" value="responsibility02"/>
+		<property name="status" value="true"/>
+		<property name="authenticated" ref="employer04Authenticated"/>
+	</bean>
+	
+		<!-- Auditorrequestd03 -->
+	
+	<bean id="auditorrequest03" class="acme.entities.auditorrequest.Auditorrequest">
+		<property name="firm" value="firm03"/>
+		<property name="responsibility" value="responsibility03"/>
+		<property name="status" value="false"/>
+		<property name="authenticated" ref="employer01Authenticated"/>
+	</bean>
+	
 	<!-- Banners -->	
 	
 	<bean id="commercial01" class="acme.entities.banners.Commercial">
@@ -1814,7 +1841,24 @@
 		<property name="sponsor" ref="sponsor02Sponsor"/>
 	</bean>
 	
-	<bean id="noncommercial02" class="acme.entities.banners.Noncommercial">
+		<bean id="noncommercial02" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://www.informatica.us.es/images/logo-etsii251.png"/>
+		<property name="slogan" value="Escuela Superior de Ingeniería Informática"/>
+		<property name="url" value="https://www.informatica.us.es/"/>
+		<property name="jingle" value="https://www.youtube.com/watch?v=fvQywNndDxo"/>
+		<property name="sponsor" ref="sponsor01Sponsor"/>
+	</bean>
+	
+		<bean id="noncommercial03" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://www.informatica.us.es/images/logo-etsii251.png"/>
+		<property name="slogan" value="Escuela Superior de Ingeniería Informática"/>
+		<property name="url" value="https://www.informatica.us.es/"/>
+		<property name="jingle" value="https://www.youtube.com/watch?v=fvQywNndDxo"/>
+		<property name="sponsor" ref="sponsor01Sponsor"/>
+	</bean>
+	
+	
+	<bean id="noncommercial04" class="acme.entities.banners.Noncommercial">
 		<property name="picture" value="https://www.etsi.us.es/sites/all/themes/ETSI/imagenes/marco/logoETSI.png"/>
 		<property name="slogan" value="Escuela Superior de Ingeniería de Sevilla"/>
 		<property name="url" value="https://www.etsi.us.es/"/>
