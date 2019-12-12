@@ -46,6 +46,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditorrequest` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `responsibility` varchar(255),
+        `status` bit,
+        `authenticated_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `auditrecord` (
        `id` integer not null,
         `version` integer not null,
@@ -288,6 +298,9 @@ create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);
+
+    alter table `auditorrequest` 
+       add constraint UK_9sejnknunem58jlkxhyopcsy2 unique (`authenticated_id`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 
     alter table `companyrecord` 
@@ -337,6 +350,11 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `auditorrequest` 
+       add constraint `FKmj2lnje7xeeex43hlasdod3vj` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
 
     alter table `auditrecord` 
        add constraint `FKditgyx355sc4ye86w7tj22cq6` 
