@@ -8,10 +8,16 @@ sponsor.commercial.form.label.creditCardYear = Expiry Year
 sponsor.commercial.form.label.creditCardName = Owner's name
 sponsor.commercial.form.label.creditCardNumber = Card's number
 sponsor.commercial.form.label.creditCardType = Card type
+sponsor.commercial.form.label.creditCardCVV = CVV
 
 sponsor.commercial.form.button.return = Return
+sponsor.commercial.form.button.create = Create
+sponsor.commercial.form.button.delete = Delete
+sponsor.commercial.form.button.update = Update
 
 #List-tags----------------------------------------------------------------------
 sponsor.commercial.list.label.slogan = Slogan
 sponsor.commercial.list.label.picture = Picture
 sponsor.commercial.list.label.url = URL
+
+sponsor.commercial.list.button.create = Create
