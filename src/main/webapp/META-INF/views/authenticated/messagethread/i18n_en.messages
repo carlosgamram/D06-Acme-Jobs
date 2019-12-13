@@ -19,5 +19,6 @@ authenticated.messagethread.form.lable.creationMoment = Creation Moment
 authenticated.messagethread.form.button.create = Create
 authenticated.messagethread.form.button.return = Return
 authenticated.messagethread.form.button.message = Messages
-authenticated.messagethread.form.button.authenticated.list = List users involved
+authenticated.messagethread.form.button.participant.list = Participants of the thread
+authenticated.messagethread.form.button.authenticated.list = Add participants
 authenticated.messagethread.form.button.authenticated.show = Show Owner
