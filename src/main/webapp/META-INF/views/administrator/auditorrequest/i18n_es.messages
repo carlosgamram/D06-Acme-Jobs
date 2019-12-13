@@ -17,6 +17,7 @@ administrator.auditorrequest.form.lable.responsibility = Declaración de respons
 administrator.auditorrequest.form.lable.status = Estado
 administrator.auditorrequest.form.button.return = Volver
 
+administrator.auditorrequest.form.button.update = Actualiza
 administrator.auditorrequest.form.lable.selection = Selecciona
 administrator.auditorrequest.form.lable.selection.accept = Aceptar
 administrator.auditorrequest.form.lable.selection.reject = Rechazar

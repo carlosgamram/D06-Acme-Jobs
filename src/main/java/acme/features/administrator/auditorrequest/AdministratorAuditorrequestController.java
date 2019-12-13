@@ -13,20 +13,24 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("administrator/auditorrequest")
+@RequestMapping("/administrator/auditorrequest/")
 public class AdministratorAuditorrequestController extends AbstractController<Administrator, Auditorrequest> {
 
 	@Autowired
-	private AdministratorAuditorrequestListService	listService;
+	private AdministratorAuditorrequestListService		listService;
 
 	@Autowired
-	private AdministratorAuditorrequestShowService	showService;
+	private AdministratorAuditorrequestUpdateService	updateService;
+
+	@Autowired
+	private AdministratorAuditorrequestShowService		showService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 
 	}
 

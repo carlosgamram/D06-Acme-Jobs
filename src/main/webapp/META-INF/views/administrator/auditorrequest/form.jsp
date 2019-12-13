@@ -16,14 +16,18 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="administrator.auditorrequest.form.lable.firm" path="firm"/>
-	<acme:form-textbox code="administrator.auditorrequest.form.lable.responsibility" path="responsibility"/>
-	<acme:form-textbox code="administrator.auditorrequest.form.lable.authenticated.userAccount.Username" path="authenticated.userAccount.Username"/>
+	<acme:form-textbox readonly="true" code="administrator.auditorrequest.form.lable.firm" path="firm"/>
+	<acme:form-textbox readonly="true" code="administrator.auditorrequest.form.lable.responsibility" path="responsibility"/>
+	<acme:form-textbox readonly="true" code="administrator.auditorrequest.form.lable.authenticated.userAccount.Username" path="authenticated.userAccount.Username"/>
 	
 	<acme:form-select code="administrator.auditorrequest.form.lable.selection" path="status" readonly="false">
 		<acme:form-option code="administrator.auditorrequest.form.lable.selection.accept" value="true"/>
 		<acme:form-option code="administrator.auditorrequest.form.lable.selection.reject" value="false"/>
 	</acme:form-select>
+	
+	<acme:form-submit 
+		code="administrator.auditorrequest.form.button.update" 
+		action="/administrator/auditorrequest/update"/>
   		
   	<acme:form-return 
   		code="administrator.auditorrequest.form.button.return"
