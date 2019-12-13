@@ -16,15 +16,11 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedAuthenticatedController extends AbstractController<Authenticated, Authenticated> {
 
 	@Autowired
-	private AuthenticatedAuthenticatedListByMessageThreadService	listService;
-
-	@Autowired
-	private AuthenticatedAuthenticatedShowService					showService;
+	private AuthenticatedAuthenticatedShowService showService;
 
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 

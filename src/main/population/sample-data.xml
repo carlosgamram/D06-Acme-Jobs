@@ -1479,172 +1479,33 @@
 		<property name="job" ref="job01"/>
 	</bean>
 	
-	<!-- Messagethread05 -->	
-	
-	<bean id="messagethread05" class="acme.entities.messagethreads.Messagethread">
-		<property name="creationMoment" value="2019/10/20 10:00"/>
-		<property name="title" value="title05"/>
-		<property name="users">
-			<list>
-				<ref bean="employer04Authenticated"/>
-				<ref bean="auditor05Authenticated"/>
-				<ref bean="employer08Authenticated"/>
-				<ref bean="sponsor06Authenticated"/>
-			</list>
-		</property>
-		<property name="owner" ref="employer04Authenticated"/>
-	</bean>
-	
-	<!-- Messagethread04 -->	
-	
-	<bean id="messagethread04" class="acme.entities.messagethreads.Messagethread">
-		<property name="creationMoment" value="2019/09/12 10:00"/>
-		<property name="title" value="title04"/>
-		<property name="users">
-			<list>
-				<ref bean="sponsor07Authenticated"/>
-				<ref bean="employer02Authenticated"/>
-				<ref bean="sponsor03Authenticated"/>
-				<ref bean="employer04Authenticated"/>
-				<ref bean="auditor02Authenticated"/>
-			</list>
-		</property>
-		<property name="owner" ref="sponsor07Authenticated"/>
-	</bean>
-	
-	<!-- Messagethread03 -->	
-	
-	<bean id="messagethread03" class="acme.entities.messagethreads.Messagethread">
-		<property name="creationMoment" value="2019/11/01 10:00"/>
-		<property name="title" value="title03"/>
-		<property name="users">
-			<list>
-				<ref bean="worker01Authenticated"/>
-				<ref bean="auditor03Authenticated"/>
-				<ref bean="employer02Authenticated"/>
-				<ref bean="sponsor02Authenticated"/>
-				<ref bean="employer05Authenticated"/>
-				<ref bean="worker08Authenticated"/>
-			</list>
-		</property>
-		<property name="owner" ref="worker01Authenticated"/>
-	</bean>
-	
-	<!-- Messagethread02 -->	
-	
-	<bean id="messagethread02" class="acme.entities.messagethreads.Messagethread">
-		<property name="creationMoment" value="2019/11/22 10:00"/>
-		<property name="title" value="title02"/>
-		<property name="users">
-			<list>
-				<ref bean="employer01Authenticated"/>
-				<ref bean="auditor02Authenticated"/>
-			</list>
-		</property>
-		<property name="owner" ref="employer01Authenticated"/>
-	</bean>
-	
 	<!-- Messagethread01 -->	
 	
 	<bean id="messagethread01" class="acme.entities.messagethreads.Messagethread">
 		<property name="creationMoment" value="2019/11/3 10:00"/>
 		<property name="title" value="title01"/>
-		<property name="users">
-			<list>
-				<ref bean="sponsor02Authenticated"/>
-				<ref bean="worker03Authenticated"/>
-			</list>
-		</property>
 		<property name="owner" ref="sponsor02Authenticated"/>
 	</bean>
 	
-	<!-- Message10 -->	
-	
-	<bean id="message10" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title10"/>
-		<property name="tags" value="tags10"/>
-		<property name="body" value="body10"/>
-		<property name="messageThread" ref="messagethread05"/>
-		<property name="authenticated" ref="employer05Authenticated"/>
+		
+	<!-- Participant03 -->	
+	<bean id="participant03" class="acme.entities.participant.Participant">
+		<property name="messagethread" ref="messagethread01"/>
+		<property name="user" ref="employer02Authenticated"/>
 	</bean>
 	
-	<!-- Message09 -->	
-	
-	<bean id="message09" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/5 10:00"/>
-		<property name="title" value="title09"/>
-		<property name="tags" value="tags09"/>
-		<property name="body" value="body09"/>
-		<property name="messageThread" ref="messagethread05"/>
-		<property name="authenticated" ref="auditor05Authenticated"/>
+	<!-- Participant02 -->	
+	<bean id="participant02" class="acme.entities.participant.Participant">
+		<property name="messagethread" ref="messagethread01"/>
+		<property name="user" ref="worker03Authenticated"/>
 	</bean>
 	
-	<!-- Message08 -->	
-	
-	<bean id="message08" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title08"/>
-		<property name="tags" value="tags08"/>
-		<property name="body" value="body08"/>
-		<property name="messageThread" ref="messagethread04"/>
-		<property name="authenticated" ref="sponsor03Authenticated"/>
+	<!-- Participant01 -->	
+	<bean id="participant01" class="acme.entities.participant.Participant">
+		<property name="messagethread" ref="messagethread01"/>
+		<property name="user" ref="sponsor02Authenticated"/>
 	</bean>
 	
-	<!-- Message07 -->	
-	
-	<bean id="message07" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title07"/>
-		<property name="tags" value="tags07"/>
-		<property name="body" value="body07"/>
-		<property name="messageThread" ref="messagethread04"/>
-		<property name="authenticated" ref="employer02Authenticated"/>
-	</bean>
-	
-	<!-- Message06 -->	
-	
-	<bean id="message06" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title06"/>
-		<property name="tags" value="tags06"/>
-		<property name="body" value="body06"/>
-		<property name="messageThread" ref="messagethread03"/>
-		<property name="authenticated" ref="worker06Authenticated"/>
-	</bean>
-	
-	<!-- Message05 -->	
-	
-	<bean id="message05" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title05"/>
-		<property name="tags" value="tags05"/>
-		<property name="body" value="body05"/>
-		<property name="messageThread" ref="messagethread02"/>
-		<property name="authenticated" ref="auditor02Authenticated"/>
-	</bean>
-	
-	<!-- Message04 -->	
-	
-	<bean id="message04" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title04"/>
-		<property name="tags"><null/></property>
-		<property name="body" value="body04"/>
-		<property name="messageThread" ref="messagethread02"/>
-		<property name="authenticated" ref="employer01Authenticated"/>
-	</bean>
-	
-	<!-- Message03 -->	
-	
-	<bean id="message03" class="acme.entities.messages.Message">
-		<property name="creationMoment" value="2019/11/4 10:00"/>
-		<property name="title" value="title03"/>
-		<property name="tags" value="tags03"/>
-		<property name="body" value="body03"/>
-		<property name="messageThread" ref="messagethread01"/>
-		<property name="authenticated" ref="sponsor02Authenticated"/>
-	</bean>
 	
 	<!-- Message02 -->	
 	

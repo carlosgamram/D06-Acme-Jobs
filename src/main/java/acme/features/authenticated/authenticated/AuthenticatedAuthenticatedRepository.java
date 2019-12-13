@@ -1,8 +1,6 @@
 
 package acme.features.authenticated.authenticated;
 
-import java.util.Collection;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -14,8 +12,5 @@ public interface AuthenticatedAuthenticatedRepository extends AbstractRepository
 
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findOneById(int id);
-
-	@Query("select ms.users from Messagethread ms where ms.id =?1 ")
-	Collection<Authenticated> findByMessagethread(Integer id);
 
 }

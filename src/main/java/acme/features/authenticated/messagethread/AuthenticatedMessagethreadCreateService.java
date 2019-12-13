@@ -68,6 +68,7 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 	@Override
 	public void create(final Request<Messagethread> request, final Messagethread entity) {
 		Date moment;
+
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(moment);
 		this.repository.save(entity);
