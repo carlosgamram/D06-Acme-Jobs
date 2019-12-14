@@ -22,6 +22,17 @@ employer.job.form.label.moreInfo = More Info
 employer.job.form.label.description = Description
 employer.job.form.label.finalmode = published
 
+employer.job.form.errors.reference=The reference already exists
+employer.job.form.errors.deadline.week=The deadline must be at least one week
+employer.job.form.errors.salary.currency=Currency must be EUR or €
+employer.job.form.errors.duties.percentage=The status cannot be published if the tasks do not add up to 100%
+employer.job.form.errors.application.notempty=You cannot delete a job that has been requested
+
+employer.job.form.button.create=Create
+employer.job.form.button.update=Update
+employer.job.form.button.delete=Delete
+
+employer.job.duty.form.button.create= Create duty
 employer.job.form.button.duty = Duties
 employer.job.form.button.auditrecord = Audit records
 employer.job.form.button.return = Return

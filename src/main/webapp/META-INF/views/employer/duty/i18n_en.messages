@@ -9,6 +9,15 @@ employer.duty.form.label.title = Title
 employer.duty.form.label.percentageOfTime = Percentage of time
 employer.duty.form.label.description = Description
 
+#Error-tags----------------------------------------------------------------
+employer.duty.form.errors.percentageOfTime=The percentage cannot exceed {0}
+employer.duty.form.errors.percentageOfTime.limit=100% of the time spent on duties is complete. You must delete or update the duties list
+employer.duty.form.errors.job.finalMode=The task cannot be deleted if the job is published
+
 #Buttons-------------------------------------------------------------------
+employer.duty.form.button.create=Create
+employer.duty.form.button.update=Update
+employer.duty.form.button.delete=Delete
+
 employer.duty.form.button.job = Job
 employer.duty.form.button.return = Return
