@@ -27,6 +27,8 @@ employer.job.form.errors.deadline.week=La fecha límite debe ser como mínimo un
 employer.job.form.errors.salary.currency=Tipo de moneda debe ser EUR o €
 employer.job.form.errors.duties.percentage=El estado no puede ser publicado si las tareas no suman el 100%
 employer.job.form.errors.application.notempty=No se puede borrar un trabajo que haya sido solicitado
+employer.job.form.errors.spam.title=El título contiene palabras spam
+employer.job.form.errors.spam.description=La descripción contiene palabras spam
 
 employer.job.form.button.create=Crear
 employer.job.form.button.update=Actualizar

@@ -7,6 +7,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SpamUtils;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -19,7 +20,10 @@ import acme.framework.services.AbstractUpdateService;
 public class EmployerJobUpdateService implements AbstractUpdateService<Employer, Job> {
 
 	@Autowired
-	EmployerJobRepository repository;
+	EmployerJobRepository	repository;
+
+	@Autowired
+	private SpamUtils		spamUtils;
 
 
 	@Override
@@ -105,6 +109,9 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		if (errors.hasErrors("finalMode")) {
 			request.getModel().setAttribute("finalMode", false);
 		}
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "employer.job.form.errors.spam.title");
+		errors.state(request, !this.spamUtils.checkSpam(entity.getDescription()), "description", "employer.job.form.errors.spam.description");
 	}
 
 	@Override

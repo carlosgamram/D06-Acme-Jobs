@@ -4,6 +4,7 @@ package acme.features.employer.duty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SpamUtils;
 import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -16,7 +17,10 @@ import acme.framework.services.AbstractUpdateService;
 public class EmployerDutyUpdateService implements AbstractUpdateService<Employer, Duty> {
 
 	@Autowired
-	private EmployerDutyRepository repository;
+	private EmployerDutyRepository	repository;
+
+	@Autowired
+	private SpamUtils				spamUtils;
 
 
 	@Override
@@ -85,6 +89,9 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		if (errors.hasErrors("percentageOfTime")) {
 			request.getModel().setAttribute("job", entity.getJob());
 		}
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "employer.duty.form.errors.spam.title");
+		errors.state(request, !this.spamUtils.checkSpam(entity.getDescription()), "description", "employer.duty.form.errors.spam.description");
 	}
 
 	@Override

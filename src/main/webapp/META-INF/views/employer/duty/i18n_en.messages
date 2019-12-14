@@ -13,6 +13,8 @@ employer.duty.form.label.description = Description
 employer.duty.form.errors.percentageOfTime=The percentage cannot exceed {0}
 employer.duty.form.errors.percentageOfTime.limit=100% of the time spent on duties is complete. You must delete or update the duties list
 employer.duty.form.errors.job.finalMode=The task cannot be deleted if the job is published
+employer.duty.form.errors.spam.title=The title contains spam words
+employer.duty.form.errors.spam.description=Description contains spam words
 
 #Buttons-------------------------------------------------------------------
 employer.duty.form.button.create=Create

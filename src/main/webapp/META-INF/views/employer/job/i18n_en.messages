@@ -27,6 +27,8 @@ employer.job.form.errors.deadline.week=The deadline must be at least one week
 employer.job.form.errors.salary.currency=Currency must be EUR or €
 employer.job.form.errors.duties.percentage=The status cannot be published if the tasks do not add up to 100%
 employer.job.form.errors.application.notempty=You cannot delete a job that has been requested
+employer.job.form.errors.spam.title=The title contains spam words
+employer.job.form.errors.spam.description=Description contains spam words
 
 employer.job.form.button.create=Create
 employer.job.form.button.update=Update
