@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Spam;
+import acme.entities.configuration.SpamUtils;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -15,7 +16,10 @@ import acme.framework.services.AbstractUpdateService;
 public class AdministratorSpamUpdateService implements AbstractUpdateService<Administrator, Spam> {
 
 	@Autowired
-	AdministratorSpamRepository repository;
+	private SpamUtils			spamUtils;
+
+	@Autowired
+	AdministratorSpamRepository	repository;
 
 
 	@Override
@@ -68,6 +72,7 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 		assert entity != null;
 
 		this.repository.save(entity);
+		this.spamUtils.setSpam(entity);
 	}
 
 }
