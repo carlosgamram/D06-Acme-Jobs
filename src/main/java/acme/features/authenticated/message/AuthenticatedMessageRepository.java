@@ -17,10 +17,10 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 	@Query("select a from Message a where a.id = ?1")
 	Message findOneById(int id);
 
-	@Query("select m from Message m where mm.messageThread.id = ?1")
+	@Query("select m from Message m where m.messageThread.id = ?1")
 	Collection<Message> findManyByMessagethread(int id);
 
-	@Query("select mt from MessageThread mt where mt.id = ?1")
+	@Query("select mt from Messagethread mt where mt.id = ?1")
 	Messagethread findMessageThreadById(int messageThreadid);
 
 	@Query("select a from Authenticated a where a.id = ?1")

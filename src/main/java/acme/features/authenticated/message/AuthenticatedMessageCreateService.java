@@ -26,6 +26,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		// TODO:
 		//1: Comprobar que el usuario que está queriendo
 		//crear un nuevo mensaje en un hilo, es realmente un usuario de ese hilo
+
 		return true;
 	}
 
@@ -35,7 +36,8 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "confirmation");
+		request.transfer(request.getModel(), "confirm");
+		request.bind(entity, errors, "creationMoment");
 	}
 
 	@Override
@@ -44,6 +46,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("confirm", false);
 		request.unbind(entity, model, "creationMoment", "title", "tags", "body");
 	}
 
@@ -60,11 +63,26 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 		result.setAuthenticated(authenticated);
 		result.setMessageThread(messageThread);
+
 		return result;
 	}
 
 	@Override
 	public void validate(final Request<Message> request, final Message entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		boolean confirmed;
+		//1: Comprobar Confirmation == 'true'
+		if (!errors.hasErrors("confirm")) {
+			confirmed = request.getModel().getBoolean("confirm");
+			errors.state(request, confirmed, "confirm", "authenticated.message.form.error.confirmation");
+		}
+		//2: Comprobar Spam
+		if (!errors.hasErrors()) {
+
+		}
 
 	}
 
