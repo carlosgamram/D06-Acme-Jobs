@@ -23,7 +23,7 @@
 	
 	<acme:form-submit	test="${command != show}"
 		code="authenticated.message.form.button.create"	
-		action="/authenticated/message/create"/>
+		action="/authenticated/message/create?id=${messageThread.id}"/>
 		
   	<acme:form-return code="authenticated.message.form.button.return"/>
 </acme:form>
