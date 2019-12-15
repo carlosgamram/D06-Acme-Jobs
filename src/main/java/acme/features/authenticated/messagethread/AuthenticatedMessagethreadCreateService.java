@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messagethreads.Messagethread;
+import acme.entities.participant.Participant;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -42,18 +43,24 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "owner", "title", "creationMoment");
+		request.unbind(entity, model, "creationMoment", "title", "owner");
 	}
 
 	@Override
 	public Messagethread instantiate(final Request<Messagethread> request) {
 		Messagethread result;
-
-		int id = request.getPrincipal().getAccountId();
-		Authenticated auth = this.repository.findAuthenticatedById(id);
+		Authenticated owner;
 
 		result = new Messagethread();
-		result.setOwner(auth);
+		owner = new Authenticated();
+
+		Participant participant;
+		participant = new Participant();
+
+		participant.setUser(owner);
+		participant.setMessagethread(result);
+
+		result.setOwner(owner);
 
 		return result;
 	}
@@ -68,10 +75,25 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 	@Override
 	public void create(final Request<Messagethread> request, final Messagethread entity) {
 		Date moment;
+		Messagethread result;
+
+		int id = request.getPrincipal().getAccountId();
+		Authenticated auth = this.repository.findAuthenticatedById(id);
+
+		result = new Messagethread();
+		result.setOwner(auth);
 
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(moment);
+
 		this.repository.save(entity);
 
+		Participant participant;
+		participant = new Participant();
+
+		participant.setUser(auth);
+		participant.setMessagethread(result);
+
+		this.repository.save(participant);
 	}
 }

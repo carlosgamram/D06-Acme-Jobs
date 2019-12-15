@@ -18,14 +18,6 @@ import lombok.Setter;
 public class Participant extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
-	/*
-	 * @NotNull
-	 *
-	 * @Valid
-	 *
-	 * @ManyToOne(optional = false)
-	 * private Messagethread messagethread;
-	 */
 
 	@NotNull
 	@Valid
