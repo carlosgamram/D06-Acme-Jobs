@@ -41,4 +41,10 @@ public class Dashboard implements Serializable {
 	Double						ratioApplicationsGroupedStatusPending;
 	Double						ratioApplicationsGroupedStatusAccepted;
 	Double						ratioApplicationsGroupedStatusRejected;
+	List<Integer>				numberApplicationsStatusPendingByDay;
+	List<String>				daysApplicationsStatusPendingByDay;
+	List<Integer>				numberApplicationsStatusAcceptedByDay;
+	List<String>				daysApplicationsStatusAcceptedByDay;
+	List<Integer>				numberApplicationsStatusRejectedByDay;
+	List<String>				daysApplicationsStatusRejectedByDay;
 }
