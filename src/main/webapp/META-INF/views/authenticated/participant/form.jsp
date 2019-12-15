@@ -18,5 +18,9 @@
 <acme:form readonly="true">
 	<acme:form-textbox code="authenticated.participant.form.label.user" path="user.identity.fullName"/>
 	
+	<acme:form-submit  
+		code="authenticated.participant.form.button.delete" 
+		action="/authenticated/participant/delete"/>
+	
   	<acme:form-return code="authenticated.participant.form.button.return"/>
 </acme:form>

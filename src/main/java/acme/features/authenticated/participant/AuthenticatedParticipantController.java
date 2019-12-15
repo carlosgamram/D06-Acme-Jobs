@@ -17,16 +17,20 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedParticipantController extends AbstractController<Authenticated, Participant> {
 
 	@Autowired
-	private AuthenticatedParticipantListService	listService;
+	private AuthenticatedParticipantListService		listService;
 
 	@Autowired
-	private AuthenticatedParticipantShowService	showService;
+	private AuthenticatedParticipantShowService		showService;
+
+	@Autowired
+	private AuthenticatedParticipantDeleteService	deleteService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }

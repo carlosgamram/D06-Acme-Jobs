@@ -10,5 +10,6 @@
 
 authenticated.participant.list.label.user = User
 
+authenticated.participant.form.button.delete = Delete
 authenticated.participant.form.label.user = User
 authenticated.participant.form.button.return = Return

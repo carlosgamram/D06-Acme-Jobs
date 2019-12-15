@@ -10,5 +10,6 @@
 
 authenticated.participant.list.label.user = Usuario
 
+authenticated.participant.form.button.delete = Borrar
 authenticated.participant.form.label.user = Usuario
 authenticated.participant.form.button.return = Volver
