@@ -1,39 +1,36 @@
 
-package acme.features.authenticated.auditorrequest;
+package acme.features.administrator.auditorrequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditorrequest.Auditorrequest;
+import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.components.Response;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Administrator;
+import acme.framework.entities.UserAccount;
 import acme.framework.helpers.PrincipalHelper;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuthenticatedAuditorrequestCreateService implements AbstractCreateService<Authenticated, Auditorrequest> {
+public class AdministratorAuditorrequestUpdateService implements AbstractUpdateService<Administrator, Auditorrequest> {
 
 	@Autowired
-	AuthenticatedAuditorrequestRepository repository;
+	AdministratorAuditorrequestRepository			repository;
+
+	@Autowired
+	AdministratorAuditorrequestAuditorRepository	auditorrepository;
 
 
 	@Override
 	public boolean authorise(final Request<Auditorrequest> request) {
 		assert request != null;
 
-		int id = request.getPrincipal().getActiveRoleId();
-		Auditorrequest ar = this.repository.findOneByAuthenticatedId(id);
-
-		if (ar != null) {
-			return false;
-		} else {
-			return true;
-		}
-
+		return true;
 	}
 
 	@Override
@@ -55,15 +52,14 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 	}
 
 	@Override
-	public Auditorrequest instantiate(final Request<Auditorrequest> request) {
+	public Auditorrequest findOne(final Request<Auditorrequest> request) {
+		assert request != null;
+
 		Auditorrequest result;
+		int id;
 
-		int id = request.getPrincipal().getActiveRoleId();
-
-		Authenticated auth = this.repository.findAuthenticatedById(id);
-
-		result = new Auditorrequest();
-		result.setAuthenticated(auth);
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
 	}
@@ -77,7 +73,20 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 	}
 
 	@Override
-	public void create(final Request<Auditorrequest> request, final Auditorrequest entity) {
+	public void update(final Request<Auditorrequest> request, final Auditorrequest entity) {
+		assert request != null;
+		assert entity != null;
+
+		Auditor account = new Auditor();
+		UserAccount user = entity.getAuthenticated().getUserAccount();
+
+		if (entity.getStatus() == true) {
+			account.setUserAccount(user);
+			account.setFirm(entity.getFirm());
+			account.setResponsibility(entity.getResponsibility());
+			this.auditorrepository.save(account);
+		}
+
 		this.repository.save(entity);
 
 	}
@@ -91,4 +100,5 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 			PrincipalHelper.handleUpdate();
 		}
 	}
+
 }
