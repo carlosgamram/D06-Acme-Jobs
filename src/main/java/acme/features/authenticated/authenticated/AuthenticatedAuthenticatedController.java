@@ -21,11 +21,15 @@ public class AuthenticatedAuthenticatedController extends AbstractController<Aut
 	@Autowired
 	private AuthenticatedAuthenticatedListService	listService;
 
+	@Autowired
+	private AuthenticatedAuthenticatedUpdateService	updateService;
+
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

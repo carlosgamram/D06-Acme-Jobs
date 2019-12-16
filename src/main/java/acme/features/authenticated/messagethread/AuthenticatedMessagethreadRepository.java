@@ -13,7 +13,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedMessagethreadRepository extends AbstractRepository {
 
-	@Query("select a from Messagethread a where a.id = ?1")
+	@Query("select mt from Messagethread mt where mt.id = ?1")
 	Messagethread findOneById(int id);
 
 	@Query("select p.messagethread from Participant p where p.user.id=?1 ")

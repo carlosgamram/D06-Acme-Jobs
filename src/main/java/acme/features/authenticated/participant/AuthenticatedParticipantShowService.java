@@ -8,6 +8,7 @@ import acme.entities.participant.Participant;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -20,7 +21,20 @@ public class AuthenticatedParticipantShowService implements AbstractShowService<
 	@Override
 	public boolean authorise(final Request<Participant> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		int mtId;
+		Participant p;
+		Authenticated auth;
+		Principal principal;
+
+		mtId = request.getModel().getInteger("id");
+		p = this.repository.findOneById(mtId);
+		auth = p.getMessagethread().getOwner();
+		principal = request.getPrincipal();
+		result = auth.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
