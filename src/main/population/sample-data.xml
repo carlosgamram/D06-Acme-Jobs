@@ -1792,7 +1792,7 @@
 	<bean id="auditorrequest02" class="acme.entities.auditorrequest.Auditorrequest">
 		<property name="firm" value="firm02"/>
 		<property name="responsibility" value="responsibility02"/>
-		<property name="status" value="true"/>
+		<property name="status"><null/></property>
 		<property name="authenticated" ref="employer04Authenticated"/>
 	</bean>
 	
@@ -1801,7 +1801,7 @@
 	<bean id="auditorrequest03" class="acme.entities.auditorrequest.Auditorrequest">
 		<property name="firm" value="firm03"/>
 		<property name="responsibility" value="responsibility03"/>
-		<property name="status" value="false"/>
+		<property name="status"><null/></property>
 		<property name="authenticated" ref="employer01Authenticated"/>
 	</bean>
 	

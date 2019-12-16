@@ -13,7 +13,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("authenticated/auditorrequest")
+@RequestMapping("/authenticated/auditorrequest/")
 public class AuthenticatedAuditorrequestController extends AbstractController<Authenticated, Auditorrequest> {
 
 	@Autowired
