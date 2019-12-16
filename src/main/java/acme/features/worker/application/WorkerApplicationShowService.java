@@ -29,7 +29,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		Principal principal;
 
 		applicationId = request.getModel().getInteger("id");
-		application = this.repository.findOneJobById(applicationId);
+		application = this.repository.findOneApplicationById(applicationId);
 
 		worker = application.getWorker();
 		principal = request.getPrincipal();
@@ -59,7 +59,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneJobById(id);
+		result = this.repository.findOneApplicationById(id);
 		return result;
 	}
 
