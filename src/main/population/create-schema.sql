@@ -198,11 +198,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `messagethread_authenticated` (
-       `messagethread_id` integer not null,
-        `users_id` integer not null
-    ) engine=InnoDB;
-
     create table `noncommercial` (
        `id` integer not null,
         `version` integer not null,
@@ -226,6 +221,14 @@
         `text` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `participant` (
+       `id` integer not null,
+        `version` integer not null,
+        `messagethread_id` integer not null,
+        `user_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -411,20 +414,20 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        foreign key (`owner_id`) 
        references `authenticated` (`id`);
 
-    alter table `messagethread_authenticated` 
-       add constraint `FK44e36gtyrt8m7vf5xnecbvlih` 
-       foreign key (`users_id`) 
-       references `authenticated` (`id`);
-
-    alter table `messagethread_authenticated` 
-       add constraint `FKp3akaw4gqb3fiiuixlcnpg7bp` 
-       foreign key (`messagethread_id`) 
-       references `messagethread` (`id`);
-
     alter table `noncommercial` 
        add constraint `FKn6bojnyiiial7yvedm9obcdrc` 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
+
+    alter table `participant` 
+       add constraint `FKm83c1afcndbxya545u5op1kaj` 
+       foreign key (`messagethread_id`) 
+       references `messagethread` (`id`);
+
+    alter table `participant` 
+       add constraint `FK67h73ib586xy9hvw4vyy75fvv` 
+       foreign key (`user_id`) 
+       references `authenticated` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

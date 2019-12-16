@@ -1,25 +1,28 @@
 
-package acme.features.authenticated.messagethread;
+package acme.features.authenticated.participant;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messagethreads.Messagethread;
+import acme.entities.participant.Participant;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedMessagethreadShowService implements AbstractShowService<Authenticated, Messagethread> {
+public class AuthenticatedParticipantListService implements AbstractListService<Authenticated, Participant> {
 
 	@Autowired
-	private AuthenticatedMessagethreadRepository repository;
+	AuthenticatedParticipantRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Messagethread> request) {
+	public boolean authorise(final Request<Participant> request) {
 		assert request != null;
 
 		boolean result;
@@ -29,35 +32,37 @@ public class AuthenticatedMessagethreadShowService implements AbstractShowServic
 		Principal principal;
 
 		mtId = request.getModel().getInteger("id");
-		mt = this.repository.findOneById(mtId);
+		mt = this.repository.findOneMessagethreadById(mtId);
 		auth = mt.getOwner();
 		principal = request.getPrincipal();
 		result = auth.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
-
 	}
 
 	@Override
-	public void unbind(final Request<Messagethread> request, final Messagethread entity, final Model model) {
+	public void unbind(final Request<Participant> request, final Participant entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creationMoment", "title", "owner.identity.fullName", "owner");
+		request.unbind(entity, model, "user.identity.fullName");
 
 	}
 
 	@Override
-	public Messagethread findOne(final Request<Messagethread> request) {
+	public Collection<Participant> findMany(final Request<Participant> request) {
 		assert request != null;
 
-		Messagethread result;
+		Collection<Participant> result;
+
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+
+		result = this.repository.findManyByMessagethread(id);
 
 		return result;
 	}
+
 }

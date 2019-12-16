@@ -12,7 +12,7 @@ import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedAuthenticatedListByMessageThreadService implements AbstractListService<Authenticated, Authenticated> {
+public class AuthenticatedAuthenticatedListService implements AbstractListService<Authenticated, Authenticated> {
 
 	@Autowired
 	AuthenticatedAuthenticatedRepository repository;
@@ -40,9 +40,7 @@ public class AuthenticatedAuthenticatedListByMessageThreadService implements Abs
 
 		Collection<Authenticated> result;
 
-		Integer id = request.getModel().getInteger("id");
-
-		result = this.repository.findByMessagethread(id);
+		result = this.repository.findAllAuthenticated();
 
 		return result;
 	}

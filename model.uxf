@@ -88,7 +88,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
+      <x>1242</x>
       <y>216</y>
       <w>198</w>
       <h>54</h>
@@ -142,11 +142,11 @@ bg=yellow</panel_attributes>
     <coordinates>
       <x>873</x>
       <y>234</y>
-      <w>225</w>
+      <w>387</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;410.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -648,7 +648,7 @@ m2=0..*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1071</x>
+      <x>1233</x>
       <y>0</y>
       <w>225</w>
       <h>72</h>
@@ -680,7 +680,7 @@ Registered by &gt;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1242</x>
+      <x>1404</x>
       <y>63</y>
       <w>117</w>
       <h>171</h>
@@ -696,7 +696,7 @@ Registered by &gt;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1467</x>
+      <x>1602</x>
       <y>0</y>
       <w>225</w>
       <h>99</h>
@@ -713,9 +713,9 @@ Message
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1287</x>
+      <x>1449</x>
       <y>9</y>
-      <w>198</w>
+      <w>171</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
@@ -724,7 +724,7 @@ m2=0..*
 
 has &gt;
 </panel_attributes>
-    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -844,7 +844,7 @@ Registered by &gt;
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1107</x>
+      <x>1269</x>
       <y>63</y>
       <w>135</w>
       <h>171</h>
@@ -860,9 +860,9 @@ m2=0..*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1269</x>
+      <x>1431</x>
       <y>90</y>
-      <w>333</w>
+      <w>306</w>
       <h>189</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
@@ -871,6 +871,6 @@ m2=0..*
 
 has &gt;
 </panel_attributes>
-    <additional_attributes>10.0;170.0;330.0;170.0;330.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;300.0;170.0;300.0;10.0</additional_attributes>
   </element>
 </diagram>

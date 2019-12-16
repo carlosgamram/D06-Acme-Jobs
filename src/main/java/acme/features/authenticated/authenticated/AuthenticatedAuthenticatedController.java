@@ -12,20 +12,24 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("authenticated/authenticated")
+@RequestMapping("/authenticated/authenticated/")
 public class AuthenticatedAuthenticatedController extends AbstractController<Authenticated, Authenticated> {
 
 	@Autowired
-	private AuthenticatedAuthenticatedListByMessageThreadService	listService;
+	private AuthenticatedAuthenticatedShowService	showService;
 
 	@Autowired
-	private AuthenticatedAuthenticatedShowService					showService;
+	private AuthenticatedAuthenticatedListService	listService;
+
+	@Autowired
+	private AuthenticatedAuthenticatedUpdateService	updateService;
 
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

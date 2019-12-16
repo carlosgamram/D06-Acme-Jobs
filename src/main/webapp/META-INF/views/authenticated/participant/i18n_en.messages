@@ -1,4 +1,4 @@
-# i18n_es.messages
+# i18n_en.messages
 #
 # Copyright (c) 2019 Rafael Corchuelo.
 #
@@ -8,13 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.participant.list.label.user = User
 
-authenticated.authenticated.list.label.fullName = Nombre completo
-
-authenticated.authenticated.form.button.update = Hacer participante
-authenticated.authenticated.form.label.fullName = Nombre completo
-
-authenticated.authenticated.form.button.return = Volver
-
-
-
+authenticated.participant.form.button.delete = Delete
+authenticated.participant.form.label.user = User
+authenticated.participant.form.button.return = Return
