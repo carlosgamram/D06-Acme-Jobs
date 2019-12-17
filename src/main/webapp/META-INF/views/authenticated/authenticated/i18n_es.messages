@@ -11,6 +11,7 @@
 
 authenticated.authenticated.list.label.fullName = Nombre completo
 
+authenticated.authenticated.form.button.update = Hacer participante
 authenticated.authenticated.form.label.fullName = Nombre completo
 
 authenticated.authenticated.form.button.return = Volver

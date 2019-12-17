@@ -20,10 +20,15 @@
  		<acme:form-textbox code="authenticated.employer.employer.form.label.userIdentity.fullName" path="identity.fullName"/>
  		<acme:form-textbox code="authenticated.employer.employer.form.label.userIdentity.email" path="identity.email"/>
  	</jstl:if>
+ 	
 	<acme:form-textbox code="authenticated.employer.employer.form.label.company" path="company"/>
 	<acme:form-textbox code="authenticated.employer.employer.form.label.sector" path="sector"/>
 	
-	<acme:form-submit test="${command == 'create'}" code="authenticated.employer.employer.form.button.create" action="/authenticated/employer/create"/>
-	<acme:form-submit test="${command == 'update'}" code="authenticated.employer.employer.form.button.update" action="/autheticated/employer/update"/>
+	<acme:form-submit test="${command == 'create'}" 
+		code="authenticated.employer.employer.form.button.create" action="/authenticated/employer/create"/>
+	
+	<acme:form-submit test="${command == 'update'}" 
+		code="authenticated.employer.employer.form.button.update" action="/authenticated/employer/update"/>
+		
 	<acme:form-return code="authenticated.employer.employer.form.button.return"/>
 </acme:form>

@@ -8,6 +8,7 @@ import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -20,7 +21,19 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
-		return true;
+
+		Integer dutyId = request.getModel().getInteger("id");
+		Duty duty = this.repository.findOneById(dutyId);
+
+		boolean result;
+		Employer employer;
+		Principal principal;
+
+		employer = duty.getJob().getEmployer();
+		principal = request.getPrincipal();
+		result = employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -29,7 +42,8 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "description", "percentageOfTime", "job", "job.reference");
+		request.unbind(entity, model, "title", "description", "percentageOfTime");
+		request.unbind(entity, model, "job", "job.id", "job.reference", "job.finalMode");
 
 	}
 

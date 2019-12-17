@@ -8,12 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.worker.worker.form.title.create = Hazte trabajador
-authenticated.worker.worker.form.title.update = Actualiza tus datos 
+authenticated.worker.form.title.create = Hazte trabajador
+authenticated.worker.form.title.update = Actualiza tus datos 
 
-authenticated.worker.worker.form.label.qualifications = Cualificaciones
-authenticated.worker.worker.form.label.skills = Habilidades
+authenticated.worker.form.label.qualifications = Cualificaciones
+authenticated.worker.form.label.skills = Habilidades
 
-authenticated.worker.worker.form.button.create = Registrate
-authenticated.worker.worker.form.button.update = Actualiza
-authenticated.worker.worker.form.button.return = Volver
+authenticated.worker.form.button.create = Registrate
+authenticated.worker.form.button.update = Actualiza
+authenticated.worker.form.button.return = Volver

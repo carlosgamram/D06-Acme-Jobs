@@ -9,6 +9,17 @@ employer.duty.form.label.title = Titulo
 employer.duty.form.label.percentageOfTime = Porcentaje de tiempo
 employer.duty.form.label.description = Descripción
 
+#Error-tags----------------------------------------------------------------
+employer.duty.form.errors.percentageOfTime=El porcentaje no puede ser superior a {0}
+employer.duty.form.errors.percentageOfTime.limit=El 100% del tiempo repartido en tareas está completo. Debe borrar o actualizar la lista de tareas
+employer.duty.form.errors.job.finalMode=No se puede eliminar la tarea si el trabajo está publicado
+employer.duty.form.errors.spam.title=El título contiene palabras spam
+employer.duty.form.errors.spam.description=La descripción contiene palabras spam
+
 #Buttons-------------------------------------------------------------------
+employer.duty.form.button.create=Crear
+employer.duty.form.button.update=Actualizar
+employer.duty.form.button.delete=Borrar
+
 employer.duty.form.button.job = Trabajo
 employer.duty.form.button.return = Volver

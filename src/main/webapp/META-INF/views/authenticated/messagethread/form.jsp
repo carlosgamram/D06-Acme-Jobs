@@ -15,26 +15,39 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
-	<acme:form-textbox code="authenticated.messagethread.form.lable.owner.identity.fullName" path="owner.identity.fullName"/>
+<acme:form>
 	<acme:form-textbox code="authenticated.messagethread.form.lable.title" path="title"/>
-	<acme:form-moment code="authenticated.messagethread.form.lable.creationMoment" path="creationMoment"/>
-	
-	<acme:form-submit 
+	<jstl:if test="${command != 'create'}">
+		<acme:form-moment 
+			code="authenticated.messagethread.list.label.creationMoment" 
+			path="creationMoment"
+			readonly= "true"/>
+	</jstl:if>
+
+	<acme:form-submit test="${command == 'create'}" 
+		code="authenticated.messagethread.form.button.create" 
+		action="/authenticated/messagethread/create"/>
+
+	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.authenticated.show" 
 		action="/authenticated/authenticated/show?id=${owner.id}"/>
 	
-	<acme:form-submit 
+	<acme:form-submit test="${command != 'create'}"
+		method="get" 
+		code="authenticated.messagethread.form.button.participant.list" 
+		action="/authenticated/participant/list?id=${id}"/>
+		
+	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.authenticated.list" 
 		action="/authenticated/authenticated/list?id=${id}"/>
-	
-  	<acme:form-return code="authenticated.messagethread.form.button.return"/>
-</acme:form>
-<acme:form>
-	<acme:form-submit 
+		
+	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.message" 
 		action="/authenticated/message/list?id=${id}"/>
-</acme:form>
+
+  	<acme:form-return code="authenticated.messagethread.form.button.return"/>
+  	
+ </acme:form>
