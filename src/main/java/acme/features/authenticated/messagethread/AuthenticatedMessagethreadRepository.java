@@ -22,4 +22,7 @@ public interface AuthenticatedMessagethreadRepository extends AbstractRepository
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findAuthenticatedById(int id);
 
+	@Query("select a from Authenticated a where a.userAccount.id = ?1")
+	Authenticated findAuthenticatedByUserAccountId(int id);
+
 }
