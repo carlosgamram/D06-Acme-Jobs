@@ -90,7 +90,7 @@ master.menu.worker.aplication.list = Aplicated Jobs
 
 master.menu.employer = Employer
 master.menu.employer.job.create = Create Job
-master.menu.employer.job.list = Publicated jobs
+master.menu.employer.job.list = List my jobs
 master.menu.employer.application.list = Applications to my jobs
 
 # master.menu.auditor ##########################################################

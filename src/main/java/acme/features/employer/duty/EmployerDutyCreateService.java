@@ -28,10 +28,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
 
-		Integer jobId = request.getModel().getInteger("job.id");
-		if (jobId == null) {
-			jobId = request.getModel().getInteger("id");
-		}
+		int jobId = request.getModel().getInteger("job.id");
 		Job job = this.repository.findOneJobById(jobId);
 
 		boolean result;
@@ -69,10 +66,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 	public Duty instantiate(final Request<Duty> request) {
 		Duty result = new Duty();
 
-		Integer jobId = request.getModel().getInteger("job.id");
-		if (jobId == null) {
-			jobId = request.getModel().getInteger("id");
-		}
+		int jobId = request.getModel().getInteger("job.id");
 		Job job = this.repository.findOneJobById(jobId);
 		result.setJob(job);
 
@@ -97,6 +91,10 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 
 		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "employer.duty.form.errors.spam.title");
 		errors.state(request, !this.spamUtils.checkSpam(entity.getDescription()), "description", "employer.duty.form.errors.spam.description");
+
+		if (errors.hasErrors()) {
+			request.getModel().setAttribute("job", entity.getJob());
+		}
 	}
 
 	@Override

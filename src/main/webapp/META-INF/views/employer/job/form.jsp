@@ -34,7 +34,7 @@
 		test="${command != 'create' and finalMode == false}"
 		method="get"
 		code="employer.job.duty.form.button.create" 
-		action="/employer/duty/create?id=${id}"/>
+		action="/employer/duty/create?job.id=${id}"/>
   	<acme:form-submit
   		method="get"
   		test="${command != 'create'}"
