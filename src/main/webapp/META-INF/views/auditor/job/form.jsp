@@ -33,10 +33,17 @@
 	<acme:form-checkbox code="auditor.job.form.label.finalMode" path="finalMode"/>
 	
   	<acme:form-return code="auditor.job.form.button.return"/>
+  	
+  	<acme:form-submit 
+		method="get" 
+		code="auditor.job.form.button.auditrecord.create" 
+		action="/auditor/auditrecord/create?id=${id}"/>	
+	
 	<acme:form-submit 
 		method="get" 
 		code="auditor.job.form.button.auditrecord.list" 
 		action="/auditor/auditrecord/list-job?id=${id}"/>
+		
 	<acme:form-submit 
 		method="get" 
 		code="auditor.job.form.button.duty.list" 

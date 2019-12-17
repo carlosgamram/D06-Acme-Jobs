@@ -15,10 +15,21 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form readonly="${command != 'create'}">
+	<acme:form-hidden path="job.id"/>
 	<acme:form-textbox code="auditor.auditrecord.form.label.title" path="title"/>
-	<acme:form-moment code="auditor.auditrecord.form.label.creationMoment" path="creationMoment"/>
+	<jstl:if test="${command != 'create'}">
+		<acme:form-moment code="auditor.auditrecord.form.label.creationMoment" path="creationMoment"/>
+	</jstl:if>
 	<acme:form-textarea code="auditor.auditrecord.form.label.body" path="body"/>
+	<acme:form-checkbox code="auditor.auditrecord.form.label.finalMode" path="finalMode"/>
+	
+	
+	<acme:form-submit
+		test="${command == 'create'}"
+		code="auditor.auditrecord.form.button.create"
+		action="/auditor/auditrecord/create"/>
+	
 	
 	<acme:form-submit 
 		method="get" 
