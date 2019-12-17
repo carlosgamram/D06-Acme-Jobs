@@ -22,5 +22,3 @@
 	<acme:list-column code="authenticated.message.list.label.tags" path="tags" width="25%"/>
 	<acme:list-column code="authenticated.message.list.label.body" path="body" width="25%"/>
 </acme:list>
-
-

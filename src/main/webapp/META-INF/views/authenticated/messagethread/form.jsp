@@ -48,6 +48,14 @@
 		code="authenticated.messagethread.form.button.message" 
 		action="/authenticated/message/list?id=${id}"/>
 
-  	<acme:form-return code="authenticated.messagethread.form.button.return"/>
+	<acme:form-submit 
+		method="get" 
+		code="authenticated.messagethread.form.button.create" 
+		action="/authenticated/message/create?id=${id}"/>
+  </acme:form>
+
+
+  <acme:form-return code="authenticated.messagethread.form.button.return"/>
   	
  </acme:form>
+
