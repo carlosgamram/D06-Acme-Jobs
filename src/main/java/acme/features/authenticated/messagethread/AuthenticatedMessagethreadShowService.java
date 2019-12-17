@@ -8,6 +8,7 @@ import acme.entities.messagethreads.Messagethread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -20,7 +21,21 @@ public class AuthenticatedMessagethreadShowService implements AbstractShowServic
 	@Override
 	public boolean authorise(final Request<Messagethread> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		int mtId;
+		Messagethread mt;
+		Authenticated auth;
+		Principal principal;
+
+		mtId = request.getModel().getInteger("id");
+		mt = this.repository.findOneById(mtId);
+		auth = mt.getOwner();
+		principal = request.getPrincipal();
+		result = auth.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
+
 	}
 
 	@Override

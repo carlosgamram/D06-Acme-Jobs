@@ -1,0 +1,23 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.auditorrequest.list.label.firm = Firma
+administrator.auditorrequest.list.label.responsibility = Declaración de responsabilidad
+
+administrator.auditorrequest.form.lable.authenticated.userAccount.Username = Nombre del usuario
+administrator.auditorrequest.form.lable.firm = Firma
+administrator.auditorrequest.form.lable.responsibility = Declaración de responsabilidad
+administrator.auditorrequest.form.lable.status = Estado
+administrator.auditorrequest.form.button.return = Volver
+
+administrator.auditorrequest.form.button.update = Actualiza
+administrator.auditorrequest.form.lable.selection = Selecciona
+administrator.auditorrequest.form.lable.selection.accept = Aceptar
+administrator.auditorrequest.form.lable.selection.reject = Rechazar

@@ -17,3 +17,4 @@ authenticated.job.form.button.employer = Employer
 authenticated.job.form.button.duty = Duties
 authenticated.job.form.button.auditrecord = Audit records
 authenticated.job.form.button.return = Return
+worker.job.form.button.apply = Apply

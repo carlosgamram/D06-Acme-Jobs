@@ -10,6 +10,7 @@
 
 authenticated.authenticated.list.label.fullName = Full Name
 
+authenticated.authenticated.form.button.update = Add participant
 authenticated.authenticated.form.label.fullName = Full Name
 
 authenticated.authenticated.form.button.return = Return

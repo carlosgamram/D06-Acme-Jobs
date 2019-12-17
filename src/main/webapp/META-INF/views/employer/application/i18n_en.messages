@@ -11,12 +11,21 @@
 employer.application.list.label.referenceNumber = Reference Number
 employer.application.list.label.statement = Statement
 employer.application.list.label.creationMoment = Creation Moment
+employer.application.list.label.status = Status
 
 employer.application.form.lable.referenceNumber = Reference Number
 employer.application.form.lable.creationMoment = Creation Moment
 employer.application.form.lable.statement = Statement
 employer.application.form.lable.skills = Skills
 employer.application.form.lable.qualifications = Qualifications
+employer.application.form.lable.status = Status
+employer.application.form.lable.status.pending = PENDING
+employer.application.form.lable.status.accepted = ACCEPTED
+employer.application.form.lable.status.rejected = REJECTED
+employer.application.form.lable.justification = Justification
 
+employer.application.form.errors.justification = If the status is rejected, you must provide a justification
+
+employer.application.form.button.update = Update
 employer.application.form.button.job = Job
 employer.application.form.button.return = Return
