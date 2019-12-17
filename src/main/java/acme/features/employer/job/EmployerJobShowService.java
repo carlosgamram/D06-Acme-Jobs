@@ -22,7 +22,6 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		//TODO: implementar isFinalMode()
 		boolean result;
 		int jobId;
 		Job job;
