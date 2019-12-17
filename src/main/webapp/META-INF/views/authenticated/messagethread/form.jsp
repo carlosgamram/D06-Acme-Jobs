@@ -52,7 +52,6 @@
 		method="get" 
 		code="authenticated.messagethread.form.button.create" 
 		action="/authenticated/message/create?id=${id}"/>
-  </acme:form>
 
 
   <acme:form-return code="authenticated.messagethread.form.button.return"/>
