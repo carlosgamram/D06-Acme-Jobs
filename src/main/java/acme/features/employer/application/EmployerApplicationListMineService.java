@@ -33,7 +33,7 @@ public class EmployerApplicationListMineService implements AbstractListService<E
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "creationMoment", "statement");
+		request.unbind(entity, model, "referenceNumber", "status", "creationMoment", "statement");
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class EmployerApplicationListMineService implements AbstractListService<E
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyByEmployerId(principal.getActiveRoleId());
+		result = this.repository.findManyByEmployerIdOrderByReferenceStatusCreationMoment(principal.getActiveRoleId());
 
 		return result;
 	}
