@@ -46,7 +46,7 @@ public class AuthenticatedParticipantListService implements AbstractListService<
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "user.identity.fullName");
+		request.unbind(entity, model, "user.identity.fullName", "messagethread");
 
 	}
 

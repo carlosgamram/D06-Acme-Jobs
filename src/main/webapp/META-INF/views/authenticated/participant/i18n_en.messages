@@ -9,7 +9,9 @@
 # they accept any liabilities with respect to them.
 
 authenticated.participant.list.label.user = User
+authenticated.participant.form.label.user.selected = Selected a user
 
+authenticated.participant.form.button.authenticated.list = Add participants
 authenticated.participant.form.button.delete = Delete
 authenticated.participant.form.label.user = User
 authenticated.participant.form.button.return = Return

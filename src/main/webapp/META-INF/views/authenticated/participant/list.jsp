@@ -20,4 +20,10 @@
 	<acme:list-column code="authenticated.participant.list.label.user" path="user.identity.fullName" width="100%"/>	
 </acme:list>
 
-
+<acme:form>
+	<acme:form-submit test="${command != 'create'}"
+			method="get" 
+			code="authenticated.participant.form.button.authenticated.list" 
+			action="/authenticated/participant/create?mt.id=${messagethread.id}"/>
+	<acme:form-return code="authenticated.participant.form.button.return"/>
+</acme:form>

@@ -38,9 +38,13 @@ public class AuthenticatedAuthenticatedListService implements AbstractListServic
 	public Collection<Authenticated> findMany(final Request<Authenticated> request) {
 		assert request != null;
 
+		int messageThreadId = request.getModel().getInteger("id");
+
 		Collection<Authenticated> result;
 
-		result = this.repository.findAllAuthenticated();
+		result = this.repository.findManyAuthenticatedByMessageThread(messageThreadId);
+
+		request.getModel().setAttribute("mt.id", messageThreadId);
 
 		return result;
 	}
