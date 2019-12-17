@@ -2,6 +2,7 @@
 package acme.features.administrator.dashboard;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-    request.unbind(entity, model, "countAnnouncement", "countCompanyRecords", "countInvestorRecords");
+		request.unbind(entity, model, "countAnnouncement", "countCompanyRecords", "countInvestorRecords");
 		request.unbind(entity, model, "minActiveRequest", "maxActiveRequest", "avgActiveRequest", "stDerivationActiveRequest");
 		request.unbind(entity, model, "minRangeMinActiveOffer", "maxRangeMinActiveOffer", "avgRangeMinActiveOffer", "stDerivationRangeMinActiveOffer");
 		request.unbind(entity, model, "minRangeMaxActiveOffer", "maxRangeMaxActiveOffer", "avgRangeMaxActiveOffer", "stDerivationRangeMaxActiveOffer");
@@ -41,6 +42,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		request.unbind(entity, model, "avgJobPerEmployer", "avgApplicationPerEmployer", "avgApplicationPerWorker");
 		request.unbind(entity, model, "ratioJobsGroupedStatusPublished", "ratioJobsGroupedStatusDraft", "ratioApplicationsGroupedStatusPending");
 		request.unbind(entity, model, "ratioApplicationsGroupedStatusAccepted", "ratioApplicationsGroupedStatusRejected");
+		request.unbind(entity, model, "numberApplicationsStatusPendingByDay", "numberApplicationsStatusAcceptedByDay", "numberApplicationsStatusRejectedByDay");
+		request.unbind(entity, model, "daysApplicationsStatusPendingByDay", "daysApplicationsStatusAcceptedByDay", "daysApplicationsStatusRejectedByDay");
 
 	}
 
@@ -111,6 +114,62 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setRatioApplicationsGroupedStatusPending(this.repository.ratioApplicationsGroupedStatusPending());
 		result.setRatioApplicationsGroupedStatusAccepted(this.repository.ratioApplicationsGroupedStatusAccepted());
 		result.setRatioApplicationsGroupedStatusRejected(this.repository.ratioApplicationsGroupedStatusRejected());
+
+		Date to = new Date();
+
+		Calendar c = Calendar.getInstance();
+		c.setTime(to);
+		c.add(Calendar.WEEK_OF_MONTH, -4);
+
+		Date from = c.getTime();
+
+		Object[] numberApplicationsStatusAcceptedByDay = this.repository.numberApplicationsStatusAcceptedByDay(from, to);
+
+		List<Integer> naa = new ArrayList<Integer>();
+		List<String> daa = new ArrayList<String>();
+
+		int j = 0;
+		while (j < numberApplicationsStatusAcceptedByDay.length) {
+			Object[] x = (Object[]) numberApplicationsStatusAcceptedByDay[j];
+			naa.add(Integer.parseInt(x[1].toString()));
+			daa.add(x[0].toString());
+			j++;
+		}
+
+		result.setNumberApplicationsStatusAcceptedByDay(naa);
+		result.setDaysApplicationsStatusAcceptedByDay(daa);
+
+		Object[] numberApplicationsStatusPendingByDay = this.repository.numberApplicationsStatusPendingByDay(from, to);
+
+		List<Integer> nap = new ArrayList<Integer>();
+		List<String> dap = new ArrayList<String>();
+
+		int k = 0;
+		while (k < numberApplicationsStatusPendingByDay.length) {
+			Object[] x = (Object[]) numberApplicationsStatusPendingByDay[k];
+			nap.add(Integer.parseInt(x[1].toString()));
+			dap.add(x[0].toString());
+			k++;
+		}
+
+		result.setNumberApplicationsStatusPendingByDay(nap);
+		result.setDaysApplicationsStatusPendingByDay(dap);
+
+		Object[] numberApplicationsStatusRejectedByDay = this.repository.numberApplicationsStatusRejectedByDay(from, to);
+
+		List<Integer> nar = new ArrayList<Integer>();
+		List<String> dar = new ArrayList<String>();
+
+		int z = 0;
+		while (z < numberApplicationsStatusRejectedByDay.length) {
+			Object[] x = (Object[]) numberApplicationsStatusRejectedByDay[z];
+			nar.add(Integer.parseInt(x[1].toString()));
+			dar.add(x[0].toString());
+			z++;
+		}
+
+		result.setNumberApplicationsStatusRejectedByDay(nar);
+		result.setDaysApplicationsStatusRejectedByDay(dar);
 
 		return result;
 	}

@@ -38,4 +38,8 @@ administrator.dashboard.form.lable.avgJobPerEmployer = Average number of jobs pe
 administrator.dashboard.form.lable.avgApplicationPerEmployer = Average number of applications per employer
 administrator.dashboard.form.lable.avgApplicationPerWorker = Average number of applications per worker
 
+administrator.dashboard.form.lable.daysApplicationsStatusPendingByDay = Numbers of Applications Pending
+administrator.dashboard.form.lable.daysApplicationsStatusAcceptedByDay = Numbers of Applications Accepted
+administrator.dashboard.form.lable.daysApplicationsStatusRejectedByDay = Numbers of Applications Rejected
+
 administrator.dashboard.form.button.return = Return

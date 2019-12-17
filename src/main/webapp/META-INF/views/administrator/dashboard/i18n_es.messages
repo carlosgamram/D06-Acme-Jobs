@@ -38,4 +38,7 @@ administrator.dashboard.form.lable.avgJobPerEmployer = Número promedio de traba
 administrator.dashboard.form.lable.avgApplicationPerEmployer = Número promedio de solicitudes por empleador
 administrator.dashboard.form.lable.avgApplicationPerWorker = Número promedio de solicitudes por trabajador
 
+administrator.dashboard.form.lable.daysApplicationsStatusPendingByDay = Numero de aplicaciones pendientes
+administrator.dashboard.form.lable.daysApplicationsStatusAcceptedByDay = Numero de aplicaciones aceptadas
+administrator.dashboard.form.lable.daysApplicationsStatusRejectedByDay = Numero de aplicaciones rechazadas
 administrator.dashboard.form.button.return = Volver
