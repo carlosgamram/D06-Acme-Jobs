@@ -34,6 +34,10 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		assert entity != null;
 		assert errors != null;
 
+		Integer authId = request.getModel().getInteger("userId");
+		Authenticated auth = this.repository.findOneAuthenticatedById(authId);
+		entity.setUser(auth != null ? auth : null);
+
 		request.bind(entity, errors);
 	}
 
@@ -45,7 +49,9 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 
 		Collection<Authenticated> users = this.repository.findManyNotParticipantByMessageThread(entity.getMessagethread().getId());
 		model.setAttribute("users", users);
-		request.unbind(entity, model, "messagethread", "user");
+		model.setAttribute("mt.id", entity.getMessagethread().getId());
+		model.setAttribute("userId", -1);
+		request.unbind(entity, model);
 	}
 
 	@Override
@@ -68,6 +74,14 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		assert entity != null;
 		assert errors != null;
 
+		errors.state(request, entity.getUser() != null, "userId", "authenticated.participant.form.errors.authenticated.participant");
+
+		if (errors.hasErrors()) {
+			Collection<Authenticated> users = this.repository.findManyNotParticipantByMessageThread(entity.getMessagethread().getId());
+			request.getModel().setAttribute("users", users);
+			request.getModel().setAttribute("mt.id", entity.getMessagethread().getId());
+			request.getModel().setAttribute("userId", -1);
+		}
 	}
 
 	@Override

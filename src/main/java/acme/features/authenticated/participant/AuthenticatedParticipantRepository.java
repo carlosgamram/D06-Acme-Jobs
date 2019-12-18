@@ -20,6 +20,9 @@ public interface AuthenticatedParticipantRepository extends AbstractRepository {
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findOneAuthenticatedById(int id);
 
+	@Query("select a from Authenticated a where a.userAccount.id = ?1")
+	Authenticated findAuthenticatedByUserAccountId(int id);
+
 	@Query("select p from Participant p where p.messagethread.id = ?1")
 	Collection<Participant> findManyByMessagethread(int id);
 
@@ -28,5 +31,11 @@ public interface AuthenticatedParticipantRepository extends AbstractRepository {
 
 	@Query("select a from Authenticated a where a not in (select p.user from Participant p where p.messagethread.id = ?1)")
 	Collection<Authenticated> findManyNotParticipantByMessageThread(int id);
+
+	@Query("select p from Participant p where p.messagethread.id = ?1 and p.user.id = ?2")
+	Participant findManyParticipantByMessagethreadId(int mtId, int authId);
+
+	@Query("select p.messagethread from Participant p where p.id = ?1")
+	Messagethread findMessagethreadByParticipantId(int authId);
 
 }

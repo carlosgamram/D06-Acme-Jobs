@@ -12,6 +12,10 @@ authenticated.participant.list.label.user = Usuario
 authenticated.participant.form.label.user.selected = Selecione un usuario
 
 authenticated.participant.form.button.authenticated.list = Añadir participantes
-authenticated.participant.form.button.delete = Borrar
+authenticated.participant.form.button.authenticated.participant.create = Añadir participante
+authenticated.participant.form.button.authenticated.participant.delete = Borrar participante
+
+authenticated.participant.form.errors.authenticated.participant = Debe seleccionar un usuario
+
 authenticated.participant.form.label.user = Usuario
 authenticated.participant.form.button.return = Volver

@@ -38,6 +38,11 @@
 		code="authenticated.messagethread.form.button.participant.list" 
 		action="/authenticated/participant/list?id=${id}"/>
 		
+	<acme:form-submit test="${command != 'create' and isOwner == true}"
+		method="get"
+		code="authenticated.participant.form.button.authenticated.list" 
+		action="/authenticated/participant/create?mt.id=${id}"/>
+		
 	<acme:form-submit test="${command != 'create'}"
 		method="get" 
 		code="authenticated.messagethread.form.button.message" 
