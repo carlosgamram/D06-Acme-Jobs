@@ -16,3 +16,5 @@ authenticated.sponsor.form.label.organizationName = Nombre de la organización
 authenticated.sponsor.form.button.create = Regitrate
 authenticated.sponsor.form.button.update = Actualiza
 authenticated.sponsor.form.button.return = Volver
+
+authenticated.sponsor.form.errors.spam.organizationname = Alerta control spam

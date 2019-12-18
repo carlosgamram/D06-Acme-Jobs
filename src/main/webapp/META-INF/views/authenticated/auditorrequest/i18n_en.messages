@@ -14,3 +14,6 @@ authenticated.auditorrequest.form.label.responsibility = Responsibility
 authenticated.auditorrequest.form.button.create = Register
 authenticated.auditorrequest.form.button.update = Update
 authenticated.auditorrequest.form.button.return = Return
+
+authenticated.auditorrequest.form.errors.spam.firm = Spam control alert
+authenticated.auditorrequest.form.errors.spam.responsibility = Spam control alert

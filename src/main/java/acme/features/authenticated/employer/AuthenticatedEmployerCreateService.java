@@ -15,6 +15,7 @@ package acme.features.authenticated.employer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SpamUtils;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -33,7 +34,10 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedEmployerRepository repository;
+	private AuthenticatedEmployerRepository	repository;
+
+	@Autowired
+	private SpamUtils						spamUtils;
 
 	// AbstractCreateService<Authenticated, Employer> ---------------------------
 
@@ -43,13 +47,6 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 		assert request != null;
 
 		return true;
-	}
-
-	@Override
-	public void validate(final Request<Employer> request, final Employer entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
 	}
 
 	@Override
@@ -87,6 +84,16 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 		result.setUserAccount(userAccount);
 
 		return result;
+	}
+
+	@Override
+	public void validate(final Request<Employer> request, final Employer entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getCompany()), "company", "authenticated.employer.form.errors.spam.company");
+		errors.state(request, !this.spamUtils.checkSpam(entity.getSector()), "sector", "authenticated.employer.form.errors.spam.sector");
 	}
 
 	@Override

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditorrequest.Auditorrequest;
+import acme.entities.configuration.SpamUtils;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -18,7 +19,10 @@ import acme.framework.services.AbstractCreateService;
 public class AuthenticatedAuditorrequestCreateService implements AbstractCreateService<Authenticated, Auditorrequest> {
 
 	@Autowired
-	AuthenticatedAuditorrequestRepository repository;
+	AuthenticatedAuditorrequestRepository	repository;
+
+	@Autowired
+	private SpamUtils						spamUtils;
 
 
 	@Override
@@ -71,6 +75,9 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getFirm()), "firm", "authenticated.auditorrequest.form.errors.spam.firm");
+		errors.state(request, !this.spamUtils.checkSpam(entity.getResponsibility()), "responsibility", "authenticated.auditorrequest.form.errors.spam.responsibility");
 
 	}
 
