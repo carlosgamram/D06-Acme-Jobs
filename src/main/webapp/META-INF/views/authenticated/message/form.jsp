@@ -20,7 +20,7 @@
 	<acme:form-textbox code="authenticated.message.form.label.title" path="title"/>
 	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags"/>
 	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
-	<jstl:if test="test="${command == create}"">
+	<jstl:if test="test="${command == create}">
 		<acme:form-checkbox code="authenticated.message.form.label.confirm" path="confirm"/>
 	</jstl:if>
 	<acme:form-submit	test="${command == create}"
