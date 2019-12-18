@@ -8,18 +8,20 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-worker.application.form.lable.job.employer.identity.fullName=Nombre completo del empleador
-worker.application.form.lable.job.title=Título del trabajo
+worker.job.form.label.reference=Referencia
+worker.job.form.label.title=Titulo
+worker.job.form.label.deadline=Hora fin
+worker.job.form.label.salary=Salario
+worker.job.form.label.moreInfo=Mas informacion
+worker.job.form.label.description=Descripcion
 
-worker.application.list.label.referenceNumber = Número de referencia
-worker.application.list.label.statement = Declaración
-worker.application.list.label.creationMoment = Fecha de creación
+worker.job.form.button.employer=Empleado
+worker.job.form.button.duty=Duties
+worker.job.form.button.auditrecord=Registros de auditorias
 
-worker.application.form.lable.referenceNumber = Número de referencia
-worker.application.form.lable.creationMoment = Fecha de creación
-worker.application.form.lable.statement =
-worker.application.form.lable.skills = Habilidades
-worker.application.form.lable.qualifications = Cualificaciones
+worker.job.form.button.return = Volver
 
-worker.application.form.button.job = Trabajo
-worker.application.form.button.return = Volver
+worker.job.list.label.title = Título
+worker.job.list.label.salary = Salario
+worker.job.list.label.deadline = Fecha límite
+worker.job.list.label.description = Descripción

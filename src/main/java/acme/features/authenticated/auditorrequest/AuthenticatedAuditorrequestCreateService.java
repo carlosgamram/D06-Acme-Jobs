@@ -25,15 +25,7 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 	public boolean authorise(final Request<Auditorrequest> request) {
 		assert request != null;
 
-		int id = request.getPrincipal().getActiveRoleId();
-		Auditorrequest ar = this.repository.findOneByAuthenticatedId(id);
-
-		if (ar != null) {
-			return false;
-		} else {
-			return true;
-		}
-
+		return true;
 	}
 
 	@Override
@@ -50,6 +42,12 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		int id = request.getPrincipal().getActiveRoleId();
+		Auditorrequest ar = this.repository.findOneByAuthenticatedId(id);
+		boolean hasRequest = ar != null;
+
+		model.setAttribute("hasRequest", hasRequest);
 
 		request.unbind(entity, model, "firm", "responsibility", "status");
 	}

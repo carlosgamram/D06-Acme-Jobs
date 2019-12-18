@@ -13,7 +13,6 @@ import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 // Apuntes:
@@ -25,23 +24,17 @@ import acme.framework.services.AbstractCreateService;
 public class AuditorAuditrecordCreateService implements AbstractCreateService<Auditor, Auditrecord> {
 
 	@Autowired
-	AuditorAuditrecordRepository	repository;
+	private AuditorAuditrecordRepository	repository;
 
 	@Autowired
-	SpamUtils						spamUtils;
+	private SpamUtils						spamUtils;
 
 
 	@Override
 	public boolean authorise(final Request<Auditrecord> request) {
 		assert request != null;
 
-		Boolean result;
-
-		Principal principal = request.getPrincipal();
-
-		result = principal.getActiveRole() == Auditor.class;
-
-		return result;
+		return true;
 	}
 
 	@Override
@@ -59,17 +52,14 @@ public class AuditorAuditrecordCreateService implements AbstractCreateService<Au
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "finalMode", "body", "job.id");
+		request.unbind(entity, model, "title", "finalMode", "body", "job", "job.id", "auditor");
 	}
 
 	@Override
 	public Auditrecord instantiate(final Request<Auditrecord> request) {
 		assert request != null;
 
-		Integer id = request.getModel().getInteger("job.id");
-		if (id == null) {
-			id = request.getModel().getInteger("id");
-		}
+		int id = request.getModel().getInteger("job.id");
 
 		int roleId = request.getPrincipal().getActiveRoleId();
 
@@ -91,9 +81,13 @@ public class AuditorAuditrecordCreateService implements AbstractCreateService<Au
 		assert entity != null;
 		assert errors != null;
 
-		String body = entity.getBody();
+		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "auditor.auditrecord.form.errors.spam.title");
+		errors.state(request, !this.spamUtils.checkSpam(entity.getBody()), "body", "auditor.auditrecord.form.errors.spam.body");
 
-		errors.state(request, !this.spamUtils.checkSpam(body), "body", "auditor.auditrecord.form.errors.spamControl");
+		if (errors.hasErrors()) {
+			request.getModel().setAttribute("job", entity.getJob());
+			request.getModel().setAttribute("auditor", entity.getAuditor());
+		}
 
 	}
 

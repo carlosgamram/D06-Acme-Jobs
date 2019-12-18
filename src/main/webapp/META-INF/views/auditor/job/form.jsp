@@ -37,7 +37,7 @@
   	<acme:form-submit 
 		method="get" 
 		code="auditor.job.form.button.auditrecord.create" 
-		action="/auditor/auditrecord/create?id=${id}"/>	
+		action="/auditor/auditrecord/create?job.id=${id}"/>	
 	
 	<acme:form-submit 
 		method="get" 

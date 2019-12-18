@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.message;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +53,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert model != null;
 
 		model.setAttribute("confirm", false);
-		request.unbind(entity, model, "creationMoment", "title", "tags", "body");
+		request.unbind(entity, model, "creationMoment", "title", "tags", "body", "messageThread.id");
 	}
 
 	@Override
@@ -60,8 +62,13 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 		Principal principal = request.getPrincipal();
 
+		Integer messageThreadId = request.getModel().getInteger("messageThread.id");
+		if (messageThreadId == null) {
+			messageThreadId = request.getModel().getInteger("id");
+		}
+
 		Authenticated authenticated = this.repository.findAuthenticatedById(principal.getActiveRoleId());
-		Messagethread messageThread = this.repository.findMessageThreadById(request.getModel().getInteger("id"));
+		Messagethread messageThread = this.repository.findMessageThreadById(messageThreadId);
 
 		Message result = new Message();
 
@@ -92,6 +99,25 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 	@Override
 	public void create(final Request<Message> request, final Message entity) {
+		assert request != null;
+		assert entity != null;
+
+		Date date = new Date(System.currentTimeMillis());
+
+		Principal principal = request.getPrincipal();
+
+		Integer messageThreadId = request.getModel().getInteger("messageThread.id");
+		if (messageThreadId == null) {
+			messageThreadId = request.getModel().getInteger("id");
+		}
+
+		Authenticated authenticated = this.repository.findAuthenticatedById(principal.getActiveRoleId());
+		Messagethread messageThread = this.repository.findMessageThreadById(messageThreadId);
+
+		entity.setAuthenticated(authenticated);
+		entity.setMessageThread(messageThread);
+		entity.setCreationMoment(date);
+
 		this.repository.save(entity);
 
 	}

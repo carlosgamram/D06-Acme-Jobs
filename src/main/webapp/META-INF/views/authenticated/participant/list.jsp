@@ -20,4 +20,6 @@
 	<acme:list-column code="authenticated.participant.list.label.user" path="user.identity.fullName" width="100%"/>	
 </acme:list>
 
-
+<acme:form>
+	<acme:form-return code="authenticated.participant.form.button.return"/>
+</acme:form>

@@ -6,6 +6,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SpamUtils;
 import acme.entities.messagethreads.Messagethread;
 import acme.entities.participant.Participant;
 import acme.framework.components.Errors;
@@ -18,7 +19,10 @@ import acme.framework.services.AbstractCreateService;
 public class AuthenticatedMessagethreadCreateService implements AbstractCreateService<Authenticated, Messagethread> {
 
 	@Autowired
-	AuthenticatedMessagethreadRepository repository;
+	private AuthenticatedMessagethreadRepository	repository;
+
+	@Autowired
+	private SpamUtils								spamUtils;
 
 
 	@Override
@@ -48,19 +52,17 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 
 	@Override
 	public Messagethread instantiate(final Request<Messagethread> request) {
-		Messagethread result;
-		Authenticated owner;
+		Messagethread result = new Messagethread();
 
-		result = new Messagethread();
-		owner = new Authenticated();
+		int id = request.getPrincipal().getAccountId();
+		Authenticated auth = this.repository.findAuthenticatedByUserAccountId(id);
 
-		Participant participant;
-		participant = new Participant();
+		Participant participant = new Participant();
 
-		participant.setUser(owner);
+		participant.setUser(auth);
 		participant.setMessagethread(result);
 
-		result.setOwner(owner);
+		result.setOwner(auth);
 
 		return result;
 	}
@@ -70,18 +72,13 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "authenticated.messagethread.form.errors.spam.title");
 	}
 
 	@Override
 	public void create(final Request<Messagethread> request, final Messagethread entity) {
 		Date moment;
-		Messagethread result;
-
-		int id = request.getPrincipal().getAccountId();
-		Authenticated auth = this.repository.findAuthenticatedById(id);
-
-		result = new Messagethread();
-		result.setOwner(auth);
 
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(moment);
@@ -91,8 +88,8 @@ public class AuthenticatedMessagethreadCreateService implements AbstractCreateSe
 		Participant participant;
 		participant = new Participant();
 
-		participant.setUser(auth);
-		participant.setMessagethread(result);
+		participant.setUser(entity.getOwner());
+		participant.setMessagethread(entity);
 
 		this.repository.save(participant);
 	}

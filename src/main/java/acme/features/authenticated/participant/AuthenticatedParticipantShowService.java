@@ -4,11 +4,11 @@ package acme.features.authenticated.participant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.messagethreads.Messagethread;
 import acme.entities.participant.Participant;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -22,19 +22,13 @@ public class AuthenticatedParticipantShowService implements AbstractShowService<
 	public boolean authorise(final Request<Participant> request) {
 		assert request != null;
 
-		boolean result;
-		int mtId;
-		Participant p;
-		Authenticated auth;
-		Principal principal;
+		int partId = request.getModel().getInteger("id");
+		Authenticated auth = this.repository.findAuthenticatedByUserAccountId(request.getPrincipal().getAccountId());
+		Messagethread messagethread = this.repository.findMessagethreadByParticipantId(partId);
 
-		mtId = request.getModel().getInteger("id");
-		p = this.repository.findOneById(mtId);
-		auth = p.getMessagethread().getOwner();
-		principal = request.getPrincipal();
-		result = auth.getUserAccount().getId() == principal.getAccountId();
+		Participant participant = this.repository.findManyParticipantByMessagethreadId(messagethread.getId(), auth.getId());
 
-		return result;
+		return participant != null;
 	}
 
 	@Override
@@ -43,6 +37,11 @@ public class AuthenticatedParticipantShowService implements AbstractShowService<
 		assert entity != null;
 		assert model != null;
 
+		Authenticated auth = this.repository.findAuthenticatedByUserAccountId(request.getPrincipal().getAccountId());
+		boolean isOwner = auth.getId() == entity.getMessagethread().getOwner().getId();
+		boolean showOwner = entity.getUser().getId() == entity.getMessagethread().getOwner().getId();
+		model.setAttribute("isOwner", isOwner);
+		model.setAttribute("showOwner", showOwner);
 		request.unbind(entity, model, "user.identity.fullName");
 
 	}

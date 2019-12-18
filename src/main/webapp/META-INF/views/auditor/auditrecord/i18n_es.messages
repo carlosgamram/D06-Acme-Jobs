@@ -20,6 +20,8 @@ auditor.auditrecord.form.label.creationMoment=Momento de creación
 auditor.auditrecord.form.label.body=Cuerpo
 auditor.auditrecord.form.label.finalMode = Es final
 
+auditor.auditrecord.form.errors.spam.title = El título contiene palabras spam 
+auditor.auditrecord.form.errors.spam.body = El cuerpo contiene palabras spam
 
 auditor.auditrecord.form.button.return=Volver
 auditor.auditrecord.form.button.job.show=Mostrar Trabajo

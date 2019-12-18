@@ -16,6 +16,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
+	<acme:form-hidden path="messageThread.id"/>
 	<acme:form-textbox code="authenticated.message.form.lable.title" path="title"/>
 	<acme:form-textbox code="authenticated.message.form.lable.tags" path="tags"/>
 	<acme:form-textarea code="authenticated.message.form.lable.body" path="body"/>
@@ -23,7 +24,7 @@
 	
 	<acme:form-submit	test="${command != show}"
 		code="authenticated.message.form.button.create"	
-		action="/authenticated/message/create?id=${messageThread.id}"/>
+		action="/authenticated/message/create"/>
 		
   	<acme:form-return code="authenticated.message.form.button.return"/>
 </acme:form>

@@ -85,12 +85,13 @@ master.menu.sponsor.noncommercial.list = Non commercial banners
 
 master.menu.worker = Worker
 master.menu.worker.aplication.list = Aplicated Jobs
+master.menu.worker.job.list = List Aplicated Jobs
 
 # master.menu.employer ########################################################
 
 master.menu.employer = Employer
 master.menu.employer.job.create = Create Job
-master.menu.employer.job.list = Publicated jobs
+master.menu.employer.job.list = List my jobs
 master.menu.employer.application.list = Applications to my jobs
 
 # master.menu.auditor ##########################################################

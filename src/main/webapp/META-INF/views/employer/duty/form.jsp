@@ -23,7 +23,6 @@
 		code="employer.duty.form.button.delete" 
 		action="/employer/duty/delete"/>
   	<acme:form-submit 
-  		test="${command != 'create'}"
 		method="get" 
 		code="employer.duty.form.button.job" 
 		action="/employer/job/show?id=${job.id}"/>
