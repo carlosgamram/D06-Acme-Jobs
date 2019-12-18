@@ -17,3 +17,6 @@ authenticated.worker.form.label.skills = Habilidades
 authenticated.worker.form.button.create = Registrate
 authenticated.worker.form.button.update = Actualiza
 authenticated.worker.form.button.return = Volver
+
+authenticated.worker.form.errors.spam.qualifications = Alerta control spam
+authenticated.worker.form.errors.spam.skills = Alerta control spam

@@ -20,3 +20,6 @@ authenticated.employer.employer.form.label.sector = Sector
 authenticated.employer.employer.form.button.create = Registrar
 authenticated.employer.employer.form.button.update = Actualizar
 authenticated.employer.employer.form.button.return = Volver
+
+authenticated.employer.form.errors.spam.company = Alerta control spam
+authenticated.employer.form.errors.spam.sector = Alerta control spam

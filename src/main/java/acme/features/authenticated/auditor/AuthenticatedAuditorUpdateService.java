@@ -15,6 +15,7 @@ package acme.features.authenticated.auditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SpamUtils;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -32,7 +33,10 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedAuditorRepository repository;
+	private AuthenticatedAuditorRepository	repository;
+
+	@Autowired
+	private SpamUtils						spamUtils;
 
 
 	// AbstractUpdateService<Authenticated, Worker> interface -----------------
@@ -49,6 +53,10 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getFirm()), "firm", "authenticated.auditorrequest.form.errors.spam.firm");
+		errors.state(request, !this.spamUtils.checkSpam(entity.getResponsibility()), "responsibility", "authenticated.auditorrequest.form.errors.spam.responsibility");
+
 	}
 
 	@Override

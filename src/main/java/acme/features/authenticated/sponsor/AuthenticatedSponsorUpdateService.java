@@ -15,6 +15,7 @@ package acme.features.authenticated.sponsor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.configuration.SpamUtils;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -32,7 +33,10 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedSponsorRepository repository;
+	private AuthenticatedSponsorRepository	repository;
+
+	@Autowired
+	private SpamUtils						spamUtils;
 
 
 	// AbstractUpdateService<Authenticated, Worker> interface -----------------
@@ -49,6 +53,9 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		errors.state(request, !this.spamUtils.checkSpam(entity.getOrganizationName()), "organizationName", "authenticated.sponsor.form.errors.spam.organizationname");
+
 	}
 
 	@Override
