@@ -17,10 +17,10 @@
 
 <acme:form>
 	<acme:form-hidden path="messageThread.id"/>
-	<acme:form-textbox code="authenticated.message.form.lable.title" path="title"/>
-	<acme:form-textbox code="authenticated.message.form.lable.tags" path="tags"/>
-	<acme:form-textarea code="authenticated.message.form.lable.body" path="body"/>
-	<acme:form-checkbox code="authenticated.message.form.lable.confirm" path="confirm"/>
+	<acme:form-textbox code="authenticated.message.form.label.title" path="title"/>
+	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags"/>
+	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
+	<acme:form-checkbox code="authenticated.message.form.label.confirm" path="confirm"/>
 	
 	<acme:form-submit	test="${command != show}"
 		code="authenticated.message.form.button.create"	

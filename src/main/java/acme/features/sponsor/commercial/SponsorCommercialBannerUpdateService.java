@@ -23,7 +23,6 @@ public class SponsorCommercialBannerUpdateService implements AbstractUpdateServi
 
 	@Override
 	public boolean authorise(final Request<Commercial> request) {
-		// TODO Repasar authorise
 		assert request != null;
 
 		return true;
@@ -68,7 +67,6 @@ public class SponsorCommercialBannerUpdateService implements AbstractUpdateServi
 		assert entity != null;
 		assert errors != null;
 
-		//TODO: comprobar error de mes
 		Calendar actualDate = Calendar.getInstance();
 		int actualMonth = actualDate.get(Calendar.MONTH);
 		int actualYear = actualDate.get(Calendar.YEAR);

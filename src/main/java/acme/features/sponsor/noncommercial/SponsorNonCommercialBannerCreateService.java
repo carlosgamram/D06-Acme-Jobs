@@ -21,7 +21,6 @@ public class SponsorNonCommercialBannerCreateService implements AbstractCreateSe
 
 	@Override
 	public boolean authorise(final Request<Noncommercial> request) {
-		// TODO Repasar authorise
 		assert request != null;
 
 		return true;

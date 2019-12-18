@@ -12,11 +12,14 @@
 	<acme:form-textbox code="sponsor.commercial.form.label.picture" path="picture"/>
 	<acme:form-textbox code="sponsor.commercial.form.label.slogan" path="slogan"/>
 	<acme:form-textbox code="sponsor.commercial.form.label.url" path="url"/>
-	<acme:form-integer code="sponsor.commercial.form.label.creditCardMonth" path="creditCardMonth"/>
-	<acme:form-integer code="sponsor.commercial.form.label.creditCardYear" path="creditCardYear"/>
+	<acme:form-integer code="sponsor.commercial.form.label.creditCardMonth" 
+		path="creditCardMonth" placeholder="MM"/>
+	<acme:form-integer code="sponsor.commercial.form.label.creditCardYear" 
+		path="creditCardYear" placeholder="YYYY"/>
 	<acme:form-textbox code="sponsor.commercial.form.label.creditCardName" path="creditCardName"/>
 	<acme:form-textbox code="sponsor.commercial.form.label.creditCardNumber" path="creditCardNumber"/>
-	<acme:form-integer code="sponsor.commercial.form.label.creditCardCVV" path="creditCardCVV"/>	
+	<acme:form-integer code="sponsor.commercial.form.label.creditCardCVV" 
+		path="creditCardCVV" placeholder="000"/>	
 	<acme:form-textbox code="sponsor.commercial.form.label.creditCardType" path="creditCardType"/>
 		
   	<acme:form-submit test = "${command=='show'}" 

@@ -45,8 +45,6 @@ public class Application extends DomainEntity {
 	@Past
 	private Date				creationMoment;
 
-	//TODO: ENUM
-	//    Status (pending/accepted/rejected)
 	@Enumerated
 	private ApplicationStatus	status;
 
