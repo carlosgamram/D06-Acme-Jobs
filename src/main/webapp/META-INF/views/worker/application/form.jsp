@@ -25,9 +25,9 @@
 	<jstl:if test="${command != 'create'}">
 		<acme:form-moment code="worker.application.form.lable.creationMoment" path="creationMoment"/>
 	</jstl:if>
-	<acme:form-textbox code="worker.application.form.lable.statement" path="statement"/>
-	<acme:form-textbox code="worker.application.form.lable.skills" path="skills"/>
-	<acme:form-textbox code="worker.application.form.lable.qualifications" path="qualifications"/>
+	<acme:form-textarea code="worker.application.form.lable.statement" path="statement"/>
+	<acme:form-textarea code="worker.application.form.lable.skills" path="skills"/>
+	<acme:form-textarea code="worker.application.form.lable.qualifications" path="qualifications"/>
   	
   	<acme:form-submit 
   		test="${command == 'show'}" 

@@ -27,6 +27,7 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `justification` varchar(255),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
         `skills` varchar(255),
@@ -298,6 +299,7 @@
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
+create index IDXarap6bcbv7ilpkjmljhng0l7i on `application` (`creation_moment` desc, `reference_number` desc, `status` asc);
 
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);
