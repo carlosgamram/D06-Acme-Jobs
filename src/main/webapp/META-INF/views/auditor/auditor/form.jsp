@@ -17,7 +17,7 @@
 
 <acme:form>
 	<acme:form-textbox code="auditor.auditor.auditor.form.label.firm" path="firm"/>
-	<acme:form-textbox code="auditor.auditor.auditor.form.label.responsibility" path="responsibility"/>
+	<acme:form-textarea code="auditor.auditor.auditor.form.label.responsibility" path="responsibility"/>
 	
 	<acme:form-return code="auditor.auditor.auditor.form.button.return"/>
 </acme:form>
