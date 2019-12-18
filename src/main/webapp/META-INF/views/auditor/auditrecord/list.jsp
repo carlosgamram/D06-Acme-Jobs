@@ -18,8 +18,8 @@
 
 <acme:list>
 	<acme:list-column code="auditor.auditrecord.list.label.title" path="title" width="40%"/>
-	<acme:list-column code="auditor.auditrecord.list.label.creationMoment" path="creationMoment" width="20%"/>	
 	<acme:list-column code="auditor.auditrecord.list.label.body" path="body" width="40%"/>		
+	<acme:list-column code="auditor.auditrecord.list.label.finalMode" path="finalMode" width="20%"/>
 </acme:list>
 
 

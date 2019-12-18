@@ -10,10 +10,11 @@ import acme.entities.auditrecords.Auditrecord;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorAuditrecordListByJobService implements AbstractListService<Auditor, Auditrecord> {
+public class AuditorAuditrecordListMineService implements AbstractListService<Auditor, Auditrecord> {
 
 	@Autowired
 	AuditorAuditrecordRepository repository;
@@ -22,6 +23,7 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 	@Override
 	public boolean authorise(final Request<Auditrecord> request) {
 		assert request != null;
+
 		return true;
 	}
 
@@ -31,8 +33,7 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "finalMode", "body");
-
+		request.unbind(entity, model, "title", "body", "finalMode");
 	}
 
 	@Override
@@ -41,9 +42,11 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 
 		Collection<Auditrecord> result;
 
-		Integer id = request.getModel().getInteger("id");
+		Principal principal = request.getPrincipal();
 
-		result = this.repository.findAuditrecordsByJob(id);
+		int roleId = principal.getActiveRoleId();
+
+		result = this.repository.findManyMineAuditrecords(roleId);
 
 		return result;
 	}

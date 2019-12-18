@@ -12,7 +12,7 @@ auditor.auditrecord.form.label.employer.fullname=Nombre completo del empleador
 auditor.auditrecord.form.label.employer.show=Mostrar Empleado
 
 auditor.auditrecord.list.label.title=Título
-auditor.auditrecord.list.label.creationMoment=Momento de creacion
+auditor.auditrecord.list.label.finalMode = Es final
 auditor.auditrecord.list.label.body=Cuerpo
 
 auditor.auditrecord.form.label.title=Título

@@ -12,8 +12,8 @@ auditor.auditrecord.form.label.employer.fullname=Employer's full name
 auditor.auditrecord.form.label.employer.show=Show Employer
 
 auditor.auditrecord.list.label.title=Title
-auditor.auditrecord.list.label.creationMoment=Creation Moment
 auditor.auditrecord.list.label.body=Body
+auditor.auditrecord.list.label.finalMode = Is final
 
 auditor.auditrecord.form.label.title = Title
 auditor.auditrecord.form.label.creationMoment = Creation Moment
