@@ -1,6 +1,7 @@
 
 package acme.features.administrator.dashboard;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -121,6 +122,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		c.setTime(to);
 		c.add(Calendar.WEEK_OF_MONTH, -4);
 
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
 		Date from = c.getTime();
 
 		Object[] numberApplicationsStatusAcceptedByDay = this.repository.numberApplicationsStatusAcceptedByDay(from, to);
@@ -128,13 +132,24 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		List<Integer> naa = new ArrayList<Integer>();
 		List<String> daa = new ArrayList<String>();
 
-		int j = 0;
-		while (j < numberApplicationsStatusAcceptedByDay.length) {
-			Object[] x = (Object[]) numberApplicationsStatusAcceptedByDay[j];
-			naa.add(Integer.parseInt(x[1].toString()));
-			daa.add(x[0].toString());
-			j++;
-		}
+		do {
+			int j = 0;
+			while (j < numberApplicationsStatusAcceptedByDay.length) {
+				Object[] x = (Object[]) numberApplicationsStatusAcceptedByDay[j];
+
+				Date d1 = c.getTime();
+				Date d2 = new Date(((Date) x[0]).getTime());
+				if (formatter.format(d1).equals(formatter.format(d2))) {
+					naa.add(Integer.parseInt(x[1].toString()));
+					daa.add(formatter.format(d1));
+				} else {
+					naa.add(0);
+					daa.add(formatter.format(d1));
+				}
+				j++;
+			}
+			c.add(Calendar.DAY_OF_YEAR, 1);
+		} while (!c.after(calendar));
 
 		result.setNumberApplicationsStatusAcceptedByDay(naa);
 		result.setDaysApplicationsStatusAcceptedByDay(daa);
@@ -144,13 +159,28 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		List<Integer> nap = new ArrayList<Integer>();
 		List<String> dap = new ArrayList<String>();
 
-		int k = 0;
-		while (k < numberApplicationsStatusPendingByDay.length) {
-			Object[] x = (Object[]) numberApplicationsStatusPendingByDay[k];
-			nap.add(Integer.parseInt(x[1].toString()));
-			dap.add(x[0].toString());
-			k++;
-		}
+		c = Calendar.getInstance();
+		c.setTime(to);
+		c.add(Calendar.WEEK_OF_MONTH, -4);
+
+		do {
+			int k = 0;
+			while (k < numberApplicationsStatusPendingByDay.length) {
+				Object[] x = (Object[]) numberApplicationsStatusPendingByDay[k];
+
+				Date d1 = c.getTime();
+				Date d2 = new Date(((Date) x[0]).getTime());
+				if (formatter.format(d1).equals(formatter.format(d2))) {
+					nap.add(Integer.parseInt(x[1].toString()));
+					dap.add(formatter.format(d1));
+				} else {
+					nap.add(0);
+					dap.add(formatter.format(d1));
+				}
+				k++;
+			}
+			c.add(Calendar.DAY_OF_YEAR, 1);
+		} while (!c.after(calendar));
 
 		result.setNumberApplicationsStatusPendingByDay(nap);
 		result.setDaysApplicationsStatusPendingByDay(dap);
@@ -160,13 +190,28 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		List<Integer> nar = new ArrayList<Integer>();
 		List<String> dar = new ArrayList<String>();
 
-		int z = 0;
-		while (z < numberApplicationsStatusRejectedByDay.length) {
-			Object[] x = (Object[]) numberApplicationsStatusRejectedByDay[z];
-			nar.add(Integer.parseInt(x[1].toString()));
-			dar.add(x[0].toString());
-			z++;
-		}
+		c = Calendar.getInstance();
+		c.setTime(to);
+		c.add(Calendar.WEEK_OF_MONTH, -4);
+
+		do {
+			int z = 0;
+			while (z < numberApplicationsStatusRejectedByDay.length) {
+				Object[] x = (Object[]) numberApplicationsStatusRejectedByDay[z];
+
+				Date d1 = c.getTime();
+				Date d2 = new Date(((Date) x[0]).getTime());
+				if (formatter.format(d1).equals(formatter.format(d2))) {
+					nar.add(Integer.parseInt(x[1].toString()));
+					dar.add(formatter.format(d1));
+				} else {
+					nar.add(0);
+					dar.add(formatter.format(d1));
+				}
+				z++;
+			}
+			c.add(Calendar.DAY_OF_YEAR, 1);
+		} while (!c.after(calendar));
 
 		result.setNumberApplicationsStatusRejectedByDay(nar);
 		result.setDaysApplicationsStatusRejectedByDay(dar);

@@ -224,13 +224,12 @@
 			};
 		var options = {
 				scales:{ 
-					xAxes:[{
-						 type: 'time',
-			                distribution: 'series',
-			                ticks:{
-								max: new Date()
-						}
-
+					yAxes:[{
+							ticks:{
+									suggestedMin: 0.0,
+									suggestedMax: 10.0,
+									stepSize: 2.0
+							}
 					}]
 				},
 				legend: {display : true}
@@ -241,7 +240,7 @@
 		canvas = document.getElementById("canvas5");
 		context = canvas.getContext("2d");
 		new Chart(context,{
-			type : "bar",
+			type : "line",
 			data : data,
 			options : options
 		});
@@ -272,12 +271,12 @@
 			};
 		var options = {
 				scales:{ 
-					xAxes:[{
-						 type: 'time',
-			                distribution: 'series',
-			                ticks:{
-								max: new Date()
-						}
+					yAxes:[{
+							ticks:{
+									suggestedMin: 0.0,
+									suggestedMax: 10.0,
+									stepSize: 2.0
+							}
 					}]
 				},
 				legend: {display : true}
@@ -288,7 +287,7 @@
 		canvas = document.getElementById("canvas6");
 		context = canvas.getContext("2d");
 		new Chart(context,{
-			type : "bar",
+			type : "line",
 			data : data,
 			options : options
 		});
@@ -320,12 +319,12 @@
 			};
 		var options = {
 				scales:{ 
-					xAxes:[{
-						 type: 'time',
-			                distribution: 'series',
-			                ticks:{
-								max: new Date()
-						}
+					yAxes:[{
+							ticks:{
+									suggestedMin: 0.0,
+									suggestedMax: 10.0,
+									stepSize: 2.0
+							}
 					}]
 				},
 				legend: {display : true}
@@ -336,7 +335,7 @@
 		canvas = document.getElementById("canvas7");
 		context = canvas.getContext("2d");
 		new Chart(context,{
-			type : "bar",
+			type : "line",
 			data : data,
 			options : options
 		});
