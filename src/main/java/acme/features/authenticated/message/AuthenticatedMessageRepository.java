@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.messages.Message;
 import acme.entities.messagethreads.Messagethread;
+import acme.entities.participant.Participant;
 import acme.framework.entities.Authenticated;
 import acme.framework.repositories.AbstractRepository;
 
@@ -25,4 +26,10 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findAuthenticatedById(int authenticatedId);
+
+	@Query("select a from Authenticated a where a.userAccount.id = ?1")
+	Authenticated findAuthenticatedByUserAccountId(int id);
+
+	@Query("select p from Participant p where p.messagethread.id = ?1 and p.user.id = ?2")
+	Participant findManyParticipantByMessagethreadId(int mtId, int authId);
 }

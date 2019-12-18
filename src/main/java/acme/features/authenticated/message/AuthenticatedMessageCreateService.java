@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.configuration.SpamUtils;
 import acme.entities.messages.Message;
 import acme.entities.messagethreads.Messagethread;
+import acme.entities.participant.Participant;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -29,11 +30,16 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 	@Override
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
-		// TODO:
-		//1: Comprobar que el usuario que está queriendo
-		//crear un nuevo mensaje en un hilo, es realmente un usuario de ese hilo
+		Integer messageThreadId = request.getModel().getInteger("messageThread.id");
+		if (messageThreadId == null) {
+			messageThreadId = request.getModel().getInteger("id");
+		}
+		int authId = request.getPrincipal().getAccountId();
+		Authenticated auth = this.repository.findAuthenticatedByUserAccountId(authId);
 
-		return true;
+		Participant par = this.repository.findManyParticipantByMessagethreadId(messageThreadId, auth.getId());
+
+		return par != null;
 	}
 
 	@Override
