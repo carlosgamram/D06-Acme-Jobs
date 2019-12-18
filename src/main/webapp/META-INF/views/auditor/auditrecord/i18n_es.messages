@@ -25,3 +25,4 @@ auditor.auditrecord.form.button.return=Volver
 auditor.auditrecord.form.button.job.show=Mostrar Trabajo
 auditor.auditrecord.form.button.auditor.show=Mostrar Auditor
 auditor.auditrecord.form.button.create = Crear Registro de Auditoría
+auditor.auditrecord.form.button.update = Actualizar Registro de Auditoría

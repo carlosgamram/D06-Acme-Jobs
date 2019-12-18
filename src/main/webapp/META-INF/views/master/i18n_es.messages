@@ -98,6 +98,7 @@ master.menu.employer.application.list = Solicitudes a mis trabajos
 master.menu.auditor = Auditor
 master.menu.auditor.list.has.auditrecord = Trabajos con registro de auditoría
 master.menu.auditor.list.not.has.auditrecord = Trabajos sin registro de auditoría
+master.menu.auditor.list.mine.auditrecord = Mis registros de auditoría
 
 
 # master.menu.user-account ####################################################

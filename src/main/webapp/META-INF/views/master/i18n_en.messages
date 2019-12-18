@@ -98,6 +98,7 @@ master.menu.employer.application.list = Applications to my jobs
 master.menu.auditor = Auditor
 master.menu.auditor.list.has.auditrecord = Jobs with audit record
 master.menu.auditor.list.not.has.auditrecord = Jobs without audit record
+master.menu.auditor.list.mine.auditrecord = My audit records
 
 
 # master.menu.user-account ####################################################

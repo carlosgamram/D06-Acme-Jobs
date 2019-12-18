@@ -8,12 +8,9 @@ import acme.entities.auditrecords.Auditrecord;
 import acme.entities.configuration.SpamUtils;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
-import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.components.Response;
 import acme.framework.entities.Principal;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -47,7 +44,7 @@ public class AuditorAuditrecordUpdateService implements AbstractUpdateService<Au
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "job.id");
 	}
 
 	@Override
@@ -56,7 +53,7 @@ public class AuditorAuditrecordUpdateService implements AbstractUpdateService<Au
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creationMoment", "title", "finalMode", "body");
+		request.unbind(entity, model, "creationMoment", "title", "finalMode", "body", "job", "auditor");
 	}
 
 	@Override
@@ -80,6 +77,11 @@ public class AuditorAuditrecordUpdateService implements AbstractUpdateService<Au
 		String body = entity.getBody();
 
 		errors.state(request, !this.spamUtils.checkSpam(body), "body", "auditor.auditrecord.form.errors.spamControl");
+
+		if (errors.hasErrors()) {
+			request.getModel().setAttribute("job", entity.getJob());
+			request.getModel().setAttribute("auditor", entity.getAuditor());
+		}
 	}
 
 	@Override
@@ -88,16 +90,6 @@ public class AuditorAuditrecordUpdateService implements AbstractUpdateService<Au
 		assert entity != null;
 
 		this.repository.save(entity);
-	}
-
-	@Override
-	public void onSuccess(final Request<Auditrecord> request, final Response<Auditrecord> response) {
-		assert request != null;
-		assert response != null;
-
-		if (request.isMethod(HttpMethod.POST)) {
-			PrincipalHelper.handleUpdate();
-		}
 	}
 
 }

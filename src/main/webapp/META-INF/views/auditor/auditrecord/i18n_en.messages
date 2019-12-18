@@ -24,3 +24,4 @@ auditor.auditrecord.form.button.return=Return
 auditor.auditrecord.form.button.job.show=Show Job
 auditor.auditrecord.form.button.auditor.show=Show Auditor
 auditor.auditrecord.form.button.create = Create Audit Record
+auditor.auditrecord.form.button.update = Update Audit Record
