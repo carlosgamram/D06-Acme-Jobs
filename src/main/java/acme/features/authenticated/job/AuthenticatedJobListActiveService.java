@@ -42,10 +42,6 @@ public class AuthenticatedJobListActiveService implements AbstractListService<Au
 
 		Collection<Job> result;
 
-		//TODO: confirmar que hay que usar un tipo date y no un Calendar y revisar todos los entregables.
-		//
-		//
-		//
 		Date actualDate = new Date();
 
 		result = this.repository.findManyActiveJob(actualDate);

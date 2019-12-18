@@ -19,6 +19,10 @@
        drop 
        foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
 
+    alter table `auditorrequest` 
+       drop 
+       foreign key `FKmj2lnje7xeeex43hlasdod3vj`;
+
     alter table `auditrecord` 
        drop 
        foreign key `FKditgyx355sc4ye86w7tj22cq6`;
@@ -63,17 +67,17 @@
        drop 
        foreign key `FK1te3egs8ru96srxjrvhcxe0fn`;
 
-    alter table `messagethread_authenticated` 
-       drop 
-       foreign key `FK44e36gtyrt8m7vf5xnecbvlih`;
-
-    alter table `messagethread_authenticated` 
-       drop 
-       foreign key `FKp3akaw4gqb3fiiuixlcnpg7bp`;
-
     alter table `noncommercial` 
        drop 
        foreign key `FKn6bojnyiiial7yvedm9obcdrc`;
+
+    alter table `participant` 
+       drop 
+       foreign key `FKm83c1afcndbxya545u5op1kaj`;
+
+    alter table `participant` 
+       drop 
+       foreign key `FK67h73ib586xy9hvw4vyy75fvv`;
 
     alter table `provider` 
        drop 
@@ -96,6 +100,8 @@
     drop table if exists `application`;
 
     drop table if exists `auditor`;
+
+    drop table if exists `auditorrequest`;
 
     drop table if exists `auditrecord`;
 
@@ -121,11 +127,11 @@
 
     drop table if exists `messagethread`;
 
-    drop table if exists `messagethread_authenticated`;
-
     drop table if exists `noncommercial`;
 
     drop table if exists `offer`;
+
+    drop table if exists `participant`;
 
     drop table if exists `provider`;
 

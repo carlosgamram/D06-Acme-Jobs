@@ -13,9 +13,14 @@ authenticated.message.list.label.creationMoment = Fecha Creación
 authenticated.message.list.label.tags = Tags
 authenticated.message.list.label.body = Cuerpo
 
-authenticated.message.form.lable.title = Título
-authenticated.message.form.lable.creationMoment = Fecha Creación
+authenticated.message.form.label.title = Título
+authenticated.message.form.label.creationMoment = Fecha Creación
 authenticated.message.form.label.tags = Tags
 authenticated.message.form.label.body = Cuerpo
+authenticated.message.form.label.confirm = Confirmar
 
+authenticated.message.form.error.confirmation = Es necesario confirmación
+authenticated.message.form.error.spam = El cuerpo contiene palabras spam
+
+authenticated.message.form.button.create = Create
 authenticated.message.form.button.return = Volver

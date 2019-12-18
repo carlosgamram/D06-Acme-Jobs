@@ -198,7 +198,150 @@
 		});
 		
 	});	
-</script>								
+</script>
+
+<div>
+	<canvas id="canvas5"></canvas>
+</div>
+
+<script type="text/javascript"> 
+	$(document).ready(function(){
+		
+		var data = {
+				labels:[
+					<jstl:forEach var="daysApplicationsStatusPendingByDayCanvas" items="${daysApplicationsStatusPendingByDay}">
+							"<acme:message code="${daysApplicationsStatusPendingByDayCanvas}"/>",
+					</jstl:forEach>
+					],
+				datasets:[{	
+						label : "<acme:message code="administrator.dashboard.form.lable.daysApplicationsStatusPendingByDay"/>",
+						data:[
+							<jstl:forEach var="numberApplicationsStatusPendingByDayCanvas" items="${numberApplicationsStatusPendingByDay}">
+								<acme:message code="${numberApplicationsStatusPendingByDayCanvas}"/>,
+							</jstl:forEach>
+						]		
+						}]
+			};
+		var options = {
+				scales:{ 
+					yAxes:[{
+							ticks:{
+									suggestedMin: 0.0,
+									suggestedMax: 10.0,
+									stepSize: 2.0
+							}
+					}]
+				},
+				legend: {display : true}
+		};
+		
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas5");
+		context = canvas.getContext("2d");
+		new Chart(context,{
+			type : "line",
+			data : data,
+			options : options
+		});
+		
+	});	
+</script>	
+<div>
+	<canvas id="canvas6"></canvas>
+</div>
+
+<script type="text/javascript"> 
+	$(document).ready(function(){
+		
+		var data = {
+				labels:[
+					<jstl:forEach var="daysApplicationsStatusAcceptedByDayCanvas" items="${daysApplicationsStatusAcceptedByDay}">
+							"<acme:message code="${daysApplicationsStatusAcceptedByDayCanvas}"/>",
+					</jstl:forEach>
+					],
+				datasets:[{	
+						label : "<acme:message code="administrator.dashboard.form.lable.daysApplicationsStatusAcceptedByDay"/>",
+						data:[
+							<jstl:forEach var="numberApplicationsStatusAcceptedByDayCanvas" items="${numberApplicationsStatusAcceptedByDay}">
+								<acme:message code="${numberApplicationsStatusAcceptedByDayCanvas}"/>,
+							</jstl:forEach>
+						]		
+						}]
+			};
+		var options = {
+				scales:{ 
+					yAxes:[{
+							ticks:{
+									suggestedMin: 0.0,
+									suggestedMax: 10.0,
+									stepSize: 2.0
+							}
+					}]
+				},
+				legend: {display : true}
+		};
+		
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas6");
+		context = canvas.getContext("2d");
+		new Chart(context,{
+			type : "line",
+			data : data,
+			options : options
+		});
+		
+	});	
+</script>
+
+<div>
+	<canvas id="canvas7"></canvas>
+</div>
+
+<script type="text/javascript"> 
+	$(document).ready(function(){
+		
+		var data = {
+				labels:[
+					<jstl:forEach var="daysApplicationsStatusRejectedByDayCanvas" items="${daysApplicationsStatusRejectedByDay}">
+							"<acme:message code="${daysApplicationsStatusRejectedByDayCanvas}"/>",
+					</jstl:forEach>
+					],
+				datasets:[{	
+						label : "<acme:message code="administrator.dashboard.form.lable.daysApplicationsStatusRejectedByDay"/>",
+						data:[
+							<jstl:forEach var="numberApplicationsStatusRejectedByDayCanvas" items="${numberApplicationsStatusRejectedByDay}">
+								<acme:message code="${numberApplicationsStatusRejectedByDayCanvas}"/>,
+							</jstl:forEach>
+						]		
+						}]
+			};
+		var options = {
+				scales:{ 
+					yAxes:[{
+							ticks:{
+									suggestedMin: 0.0,
+									suggestedMax: 10.0,
+									stepSize: 2.0
+							}
+					}]
+				},
+				legend: {display : true}
+		};
+		
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas7");
+		context = canvas.getContext("2d");
+		new Chart(context,{
+			type : "line",
+			data : data,
+			options : options
+		});
+		
+	});	
+</script>							
 							
 <acme:form readonly="true">
 	<acme:form-textbox code="administrator.dashboard.form.lable.countAnnouncement" path="countAnnouncement" />

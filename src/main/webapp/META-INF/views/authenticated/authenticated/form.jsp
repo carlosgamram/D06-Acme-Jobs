@@ -17,6 +17,6 @@
 
 <acme:form readonly="true">
 	<acme:form-textbox code="authenticated.authenticated.form.label.fullName" path="identity.fullName"/>
-
+	
   	<acme:form-return code="authenticated.authenticated.form.button.return"/>
 </acme:form>

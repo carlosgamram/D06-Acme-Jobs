@@ -20,3 +20,6 @@ worker.job.form.button.duty=Tareas
 worker.job.form.button.auditrecord=Registros de auditoría
 
 worker.application.form.button.return = Volver
+worker.application.form.button.create = Crear
+
+worker.application.form.errors.referenceNumber.alreadyExists = El número de referencia ya existe

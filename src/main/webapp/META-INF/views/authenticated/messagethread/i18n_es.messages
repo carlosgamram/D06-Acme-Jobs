@@ -16,7 +16,11 @@ authenticated.messagethread.list.label.creationMoment = Fecha Creación
 authenticated.messagethread.form.lable.title = Título
 authenticated.messagethread.form.lable.creationMoment = Fecha Creación
 
+authenticated.messagethread.form.errors.spam.title = El título contiene palabras spam
+
+authenticated.messagethread.form.button.create = Crear
 authenticated.messagethread.form.button.return = Volver
 authenticated.messagethread.form.button.message = Mensajes
-authenticated.messagethread.form.button.authenticated.list = Listar Auditores
+authenticated.messagethread.form.button.participant.list = Participantes del hilo
+authenticated.messagethread.form.button.authenticated.list = Añadir participantes
 authenticated.messagethread.form.button.authenticated.show = Mostrar Creador

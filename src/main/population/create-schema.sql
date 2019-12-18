@@ -27,6 +27,7 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `justification` varchar(255),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
         `skills` varchar(255),
@@ -43,6 +44,16 @@
         `user_account_id` integer,
         `firm` varchar(255),
         `responsibility` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditorrequest` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `responsibility` varchar(255),
+        `status` bit,
+        `authenticated_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -188,11 +199,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `messagethread_authenticated` (
-       `messagethread_id` integer not null,
-        `users_id` integer not null
-    ) engine=InnoDB;
-
     create table `noncommercial` (
        `id` integer not null,
         `version` integer not null,
@@ -216,6 +222,14 @@
         `text` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `participant` (
+       `id` integer not null,
+        `version` integer not null,
+        `messagethread_id` integer not null,
+        `user_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -285,9 +299,13 @@
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
+create index IDXarap6bcbv7ilpkjmljhng0l7i on `application` (`creation_moment` desc, `reference_number` desc, `status` asc);
 
     alter table `application` 
        add constraint UK_rf84q38qr35ymh5nn0dcxfdue unique (`reference_number`);
+
+    alter table `auditorrequest` 
+       add constraint UK_9sejnknunem58jlkxhyopcsy2 unique (`authenticated_id`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 
     alter table `companyrecord` 
@@ -337,6 +355,11 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `auditorrequest` 
+       add constraint `FKmj2lnje7xeeex43hlasdod3vj` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
 
     alter table `auditrecord` 
        add constraint `FKditgyx355sc4ye86w7tj22cq6` 
@@ -393,20 +416,20 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        foreign key (`owner_id`) 
        references `authenticated` (`id`);
 
-    alter table `messagethread_authenticated` 
-       add constraint `FK44e36gtyrt8m7vf5xnecbvlih` 
-       foreign key (`users_id`) 
-       references `authenticated` (`id`);
-
-    alter table `messagethread_authenticated` 
-       add constraint `FKp3akaw4gqb3fiiuixlcnpg7bp` 
-       foreign key (`messagethread_id`) 
-       references `messagethread` (`id`);
-
     alter table `noncommercial` 
        add constraint `FKn6bojnyiiial7yvedm9obcdrc` 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
+
+    alter table `participant` 
+       add constraint `FKm83c1afcndbxya545u5op1kaj` 
+       foreign key (`messagethread_id`) 
+       references `messagethread` (`id`);
+
+    alter table `participant` 
+       add constraint `FK67h73ib586xy9hvw4vyy75fvv` 
+       foreign key (`user_id`) 
+       references `authenticated` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

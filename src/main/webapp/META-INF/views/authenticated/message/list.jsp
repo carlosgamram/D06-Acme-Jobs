@@ -23,4 +23,6 @@
 	<acme:list-column code="authenticated.message.list.label.body" path="body" width="25%"/>
 </acme:list>
 
-
+<acme:form>
+	<acme:form-return code="authenticated.message.form.button.return"/>
+</acme:form>

@@ -31,7 +31,7 @@ public class AuditorAuditrecordListByJobService implements AbstractListService<A
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creationMoment", "title", "finalMode", "body");
+		request.unbind(entity, model, "title", "finalMode", "body");
 
 	}
 

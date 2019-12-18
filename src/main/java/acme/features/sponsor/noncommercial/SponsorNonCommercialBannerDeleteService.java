@@ -59,7 +59,9 @@ public class SponsorNonCommercialBannerDeleteService implements AbstractDeleteSe
 
 	@Override
 	public void validate(final Request<Noncommercial> request, final Noncommercial entity, final Errors errors) {
-		// TODO Ver lo necesario para validar un Delete
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 
 	}
 

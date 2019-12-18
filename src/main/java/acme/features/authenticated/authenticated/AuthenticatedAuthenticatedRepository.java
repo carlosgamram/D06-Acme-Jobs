@@ -15,7 +15,9 @@ public interface AuthenticatedAuthenticatedRepository extends AbstractRepository
 	@Query("select a from Authenticated a where a.id = ?1")
 	Authenticated findOneById(int id);
 
-	@Query("select ms.users from Messagethread ms where ms.id =?1 ")
-	Collection<Authenticated> findByMessagethread(Integer id);
+	@Query("select a from Authenticated a")
+	Collection<Authenticated> findAllAuthenticated();
 
+	@Query("select a from Authenticated a where a not in (select p.user from Participant p where p.messagethread.id = ?1)")
+	Collection<Authenticated> findManyAuthenticatedByMessageThread(int id);
 }

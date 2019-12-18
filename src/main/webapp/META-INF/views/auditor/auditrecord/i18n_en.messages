@@ -12,15 +12,19 @@ auditor.auditrecord.form.label.employer.fullname=Employer's full name
 auditor.auditrecord.form.label.employer.show=Show Employer
 
 auditor.auditrecord.list.label.title=Title
-auditor.auditrecord.list.label.creationMoment=Creation Moment
 auditor.auditrecord.list.label.body=Body
+auditor.auditrecord.list.label.finalMode = Is final
 
 auditor.auditrecord.form.label.title = Title
 auditor.auditrecord.form.label.creationMoment = Creation Moment
 auditor.auditrecord.form.label.body = Body
 auditor.auditrecord.form.label.finalMode = Is final
 
+auditor.auditrecord.form.errors.spam.title = The title contains spam words
+auditor.auditrecord.form.errors.spam.body = The body contains spam words
+
 auditor.auditrecord.form.button.return=Return
 auditor.auditrecord.form.button.job.show=Show Job
 auditor.auditrecord.form.button.auditor.show=Show Auditor
 auditor.auditrecord.form.button.create = Create Audit Record
+auditor.auditrecord.form.button.update = Update Audit Record

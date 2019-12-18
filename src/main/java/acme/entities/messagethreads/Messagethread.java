@@ -1,17 +1,14 @@
 
 package acme.entities.messagethreads;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
@@ -25,26 +22,22 @@ import lombok.Setter;
 @Setter
 public class Messagethread extends DomainEntity {
 
-	private static final long					serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
 	//Atributes ------------------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date								creationMoment;
+	private Date				creationMoment;
 
 	@NotBlank
-	private String								title;
+	private String				title;
 
 	//Relationships ---------------------------------------
-
-	@NotEmpty
-	@ManyToMany()
-	private Collection<@Valid Authenticated>	users;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Authenticated						owner;
+	private Authenticated		owner;
 
 }

@@ -42,6 +42,7 @@ master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.announcement = Announcements
 master.menu.administrator.challenge = Challenges
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.auditorrequest = Auditor requests list
 master.menu.administrator.spam = Spam words
 master.menu.administrator.shutdown = Shut down
 master.menu.administrator.investorrecord = Investor Records
@@ -84,11 +85,13 @@ master.menu.sponsor.noncommercial.list = Non commercial banners
 
 master.menu.worker = Worker
 master.menu.worker.aplication.list = Aplicated Jobs
+master.menu.worker.job.list = List Aplicated Jobs
 
 # master.menu.employer ########################################################
 
 master.menu.employer = Employer
-master.menu.employer.job.list = Publicated jobs
+master.menu.employer.job.create = Create Job
+master.menu.employer.job.list = List my jobs
 master.menu.employer.application.list = Applications to my jobs
 
 # master.menu.auditor ##########################################################
@@ -96,6 +99,7 @@ master.menu.employer.application.list = Applications to my jobs
 master.menu.auditor = Auditor
 master.menu.auditor.list.has.auditrecord = Jobs with audit record
 master.menu.auditor.list.not.has.auditrecord = Jobs without audit record
+master.menu.auditor.list.mine.auditrecord = My audit records
 
 
 # master.menu.user-account ####################################################
@@ -110,6 +114,9 @@ master.menu.user-account.become-worker = Become a worker
 master.menu.user-account.worker = Worker data
 master.menu.user-account.become-employer = Become a employer
 master.menu.user-account.employer = Employer data
+master.menu.user-account.auditorrequest = Auditor request
+master.menu.user-account.auditor = Auditor data
+
 master.menu.user-account.become-sponsor = Become a sponsor
 master.menu.user-account.sponsor = Sponsor data
 

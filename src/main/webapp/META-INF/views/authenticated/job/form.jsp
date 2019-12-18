@@ -23,5 +23,10 @@
 		method="get" 
 		code="authenticated.job.form.button.auditrecord" 
 		action="/authenticated/auditrecord/list-by-job?id=${id}"/>
+	<acme:form-submit 
+		test ="${principal.authorities[0]=='AUTH_Worker'}"
+		method="get" 
+		code="worker.job.form.button.apply" 
+		action="/worker/application/create?id=${id}"/>
   	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>

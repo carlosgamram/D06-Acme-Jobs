@@ -31,7 +31,10 @@ public class AuthenticatedAuditorController extends AbstractController<Authentic
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedAuditorShowByAuditrecordService showByJobService;
+	private AuthenticatedAuditorShowByAuditrecordService	showByJobService;
+
+	@Autowired
+	private AuthenticatedAuditorUpdateService				updateService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -39,6 +42,7 @@ public class AuthenticatedAuditorController extends AbstractController<Authentic
 	@PostConstruct
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.SHOW_BY_AUDITRECORD, BasicCommand.SHOW, this.showByJobService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

@@ -59,8 +59,9 @@ public class SponsorCommercialBannerDeleteService implements AbstractDeleteServi
 
 	@Override
 	public void validate(final Request<Commercial> request, final Commercial entity, final Errors errors) {
-		// TODO Ver lo necesario para validar un Delete
-
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 	}
 
 	@Override

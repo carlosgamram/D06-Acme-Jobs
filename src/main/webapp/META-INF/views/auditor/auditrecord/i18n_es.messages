@@ -12,7 +12,7 @@ auditor.auditrecord.form.label.employer.fullname=Nombre completo del empleador
 auditor.auditrecord.form.label.employer.show=Mostrar Empleado
 
 auditor.auditrecord.list.label.title=Título
-auditor.auditrecord.list.label.creationMoment=Momento de creacion
+auditor.auditrecord.list.label.finalMode = Es final
 auditor.auditrecord.list.label.body=Cuerpo
 
 auditor.auditrecord.form.label.title=Título
@@ -20,8 +20,11 @@ auditor.auditrecord.form.label.creationMoment=Momento de creación
 auditor.auditrecord.form.label.body=Cuerpo
 auditor.auditrecord.form.label.finalMode = Es final
 
+auditor.auditrecord.form.errors.spam.title = El título contiene palabras spam 
+auditor.auditrecord.form.errors.spam.body = El cuerpo contiene palabras spam
 
 auditor.auditrecord.form.button.return=Volver
 auditor.auditrecord.form.button.job.show=Mostrar Trabajo
 auditor.auditrecord.form.button.auditor.show=Mostrar Auditor
 auditor.auditrecord.form.button.create = Crear Registro de Auditoría
+auditor.auditrecord.form.button.update = Actualizar Registro de Auditoría

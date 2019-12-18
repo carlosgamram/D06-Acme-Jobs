@@ -28,7 +28,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "status")
+	@Index(columnList = "status"), @Index(columnList = "creationMoment desc, referenceNumber desc, status asc")
 })
 public class Application extends DomainEntity {
 
@@ -45,8 +45,6 @@ public class Application extends DomainEntity {
 	@Past
 	private Date				creationMoment;
 
-	//TODO: ENUM
-	//    Status (pending/accepted/rejected)
 	@Enumerated
 	private ApplicationStatus	status;
 
@@ -59,6 +57,8 @@ public class Application extends DomainEntity {
 
 	@NotBlank
 	private String				qualifications;
+
+	private String				justification;
 
 	//Relationships ---------------------------------------
 

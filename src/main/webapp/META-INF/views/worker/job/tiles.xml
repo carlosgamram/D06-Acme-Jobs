@@ -7,5 +7,10 @@
 	<definition name="worker/job/form" extends="master">		
 		<put-attribute name="body" type="template" value="../worker/job/form.jsp" />
 	</definition>
+	
+		<definition name="worker/job/list" extends="master">		
+		<put-attribute name="body" type="template" value="../worker/job/list.jsp" />
+	</definition>
+	
 
 </tiles-definitions>
