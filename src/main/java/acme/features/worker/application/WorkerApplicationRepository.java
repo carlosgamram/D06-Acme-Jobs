@@ -25,4 +25,7 @@ public interface WorkerApplicationRepository extends AbstractRepository {
 
 	@Query("select sp from Worker sp where sp.id = ?1")
 	Worker findWorkerById(int workerId);
+
+	@Query("select count(a) from Application a where a.referenceNumber = ?1")
+	int countApplicationsByRefNum(String refNum);
 }

@@ -81,6 +81,8 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		worker = this.repository.findWorkerById(principal.getActiveRoleId());
 
+		result.setSkills(worker.getSkills());
+		result.setQualifications(worker.getQualifications());
 		result.setWorker(worker);
 
 		return result;
@@ -91,6 +93,11 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		String refNum = entity.getReferenceNumber();
+		int numApplications = this.repository.countApplicationsByRefNum(refNum);
+
+		errors.state(request, numApplications == 0, "referenceNumber", "worker.application.form.errors.referenceNumber.alreadyExists");
 	}
 
 	@Override

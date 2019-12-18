@@ -24,3 +24,5 @@ worker.application.form.lable.qualifications = Qualifications
 worker.application.form.button.job = Job
 worker.application.form.button.return = Return
 worker.application.form.button.create = Create
+
+worker.application.form.errors.referenceNumber.alreadyExists = Reference number already exists
