@@ -21,7 +21,6 @@ public class SponsorNonCommercialBannerUpdateService implements AbstractUpdateSe
 
 	@Override
 	public boolean authorise(final Request<Noncommercial> request) {
-		// TODO Repasar authorise
 		assert request != null;
 
 		return true;

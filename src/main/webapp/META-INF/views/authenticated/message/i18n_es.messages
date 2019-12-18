@@ -18,4 +18,6 @@ authenticated.message.form.lable.creationMoment = Fecha Creación
 authenticated.message.form.label.tags = Tags
 authenticated.message.form.label.body = Cuerpo
 
+
+authenticated.message.form.button.create = Create
 authenticated.message.form.button.return = Volver
