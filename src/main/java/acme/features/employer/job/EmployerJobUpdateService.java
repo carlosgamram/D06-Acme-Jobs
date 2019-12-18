@@ -103,15 +103,16 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		}
 		if (entity.getFinalMode()) {
 			Double sumPercentageOfTime = this.repository.sumPercentageOfTimeByJobId(entity.getId());
-			errors.state(request, sumPercentageOfTime == 100L, "finalMode", "employer.job.form.errors.duties.percentage");
-		}
-
-		if (errors.hasErrors("finalMode")) {
-			request.getModel().setAttribute("finalMode", false);
+			errors.state(request, sumPercentageOfTime != null && sumPercentageOfTime == 100L, "finalMode", "employer.job.form.errors.duties.percentage");
 		}
 
 		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "employer.job.form.errors.spam.title");
 		errors.state(request, !this.spamUtils.checkSpam(entity.getDescription()), "description", "employer.job.form.errors.spam.description");
+
+		if (errors.hasErrors()) {
+			request.getModel().setAttribute("finalMode", false);
+		}
+
 	}
 
 	@Override

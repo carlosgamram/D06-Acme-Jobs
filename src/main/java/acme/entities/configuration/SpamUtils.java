@@ -28,11 +28,11 @@ public class SpamUtils {
 	public void init() {
 		this.spam = this.repository.findManyAll().iterator().next();
 		SpamUtils.count = 0d;
-		SpamUtils.spamWords = Arrays.asList(this.spam.getWords().split(","));
+		SpamUtils.spamWords = Arrays.asList(this.spam.getWords().toLowerCase().split(","));
 	}
 
 	public Boolean checkSpam(final String text) {
-		String[] splitText = text.split(SpamUtils.REGEX);
+		String[] splitText = text.toLowerCase().split(SpamUtils.REGEX);
 		int length = splitText.length;
 		Double max = length * (this.spam.getThreshold() / 100);
 

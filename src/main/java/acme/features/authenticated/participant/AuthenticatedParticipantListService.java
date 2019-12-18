@@ -6,12 +6,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.messagethreads.Messagethread;
 import acme.entities.participant.Participant;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -25,19 +23,12 @@ public class AuthenticatedParticipantListService implements AbstractListService<
 	public boolean authorise(final Request<Participant> request) {
 		assert request != null;
 
-		boolean result;
-		int mtId;
-		Messagethread mt;
-		Authenticated auth;
-		Principal principal;
+		int mtId = request.getModel().getInteger("id");
+		Authenticated auth = this.repository.findAuthenticatedByUserAccountId(request.getPrincipal().getAccountId());
 
-		mtId = request.getModel().getInteger("id");
-		mt = this.repository.findOneMessagethreadById(mtId);
-		auth = mt.getOwner();
-		principal = request.getPrincipal();
-		result = auth.getUserAccount().getId() == principal.getAccountId();
+		Participant participant = this.repository.findManyParticipantByMessagethreadId(mtId, auth.getId());
 
-		return result;
+		return participant != null;
 	}
 
 	@Override

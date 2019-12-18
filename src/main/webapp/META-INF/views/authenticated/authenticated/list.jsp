@@ -18,7 +18,7 @@
 
 <acme:list >
 	<acme:list-column code="authenticated.authenticated.list.label.fullName" path="identity.fullName" width="100%"/>
-	
 </acme:list>
 
+<acme:form-return code="authenticated.authenticated.form.button.return"/>
 

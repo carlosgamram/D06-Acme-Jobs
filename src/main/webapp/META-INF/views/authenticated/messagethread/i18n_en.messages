@@ -16,6 +16,8 @@ authenticated.messagethread.list.label.creationMoment = Creation Moment
 authenticated.messagethread.form.lable.title = Title
 authenticated.messagethread.form.lable.creationMoment = Creation Moment
 
+authenticated.messagethread.form.errors.spam.title=The title contains spam words
+
 authenticated.messagethread.form.button.create = Create
 authenticated.messagethread.form.button.return = Return
 authenticated.messagethread.form.button.message = Messages
