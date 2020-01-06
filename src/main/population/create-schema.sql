@@ -26,6 +26,7 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `xxxrequest_response` varchar(255),
         `creation_moment` datetime(6),
         `justification` varchar(255),
         `qualifications` varchar(255),
@@ -33,6 +34,7 @@
         `skills` varchar(255),
         `statement` varchar(255),
         `status` integer,
+        `xxx` varchar(255),
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)

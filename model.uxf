@@ -600,7 +600,7 @@ Worker
       <x>1224</x>
       <y>828</y>
       <w>225</w>
-      <h>117</h>
+      <h>153</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Application
@@ -610,6 +610,8 @@ Application
 +statement: String{NotBlank}
 +skills: String{NotBlank}
 +qualifications: String{NotBlank}
++XXXRequestResponse: String
++xxx: String
 </panel_attributes>
     <additional_attributes/>
   </element>

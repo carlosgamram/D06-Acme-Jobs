@@ -1260,7 +1260,7 @@
 		<property name="xxxRequest" ref="XXXRequest02"/>
 	</bean>
 	
-	<!-- Job01  //Todo: Cambiar TODOS-->	
+	<!-- Job01  //TODO: Cambiar TODOS-->	
 	
 	<bean id="job01" class="acme.entities.jobs.Job">
 		<property name="deadline" value="2022/11/1 10:00"/>
@@ -1376,6 +1376,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker7Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 16"/>
+		<property name="xxx" value="xxx 16"/>
 	</bean>
 	
 	<!-- Application15 -->
@@ -1390,6 +1392,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker6Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 15"/>
+		<property name="xxx" value="xxx 15"/>
 	</bean>
 	
 	<!-- Application14 -->
@@ -1404,6 +1408,8 @@
 		<property name="justification" value="justification14" />
 		<property name="worker" ref="worker5Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 14"/>
+		<property name="xxx" value="xxx 14"/>
 	</bean>
 	
 	<!-- Application13 -->
@@ -1418,6 +1424,8 @@
 		<property name="justification" value="justification13" />
 		<property name="worker" ref="worker4Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 13"/>
+		<property name="xxx" value="xxx 13"/>
 	</bean>
 	
 	<!-- Application12 -->
@@ -1432,6 +1440,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker3Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 12"/>
+		<property name="xxx" value="xxx 12"/>
 	</bean>
 	
 	<!-- Application11 -->
@@ -1446,6 +1456,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker2Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 11"/>
+		<property name="xxx" value="xxx 11"/>
 	</bean>
 	
 	<!-- Application10 -->	
@@ -1460,6 +1472,8 @@
 		<property name="justification" value="justification10" />
 		<property name="worker" ref="worker5Worker"/>
 		<property name="job" ref="job12"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 10"/>
+		<property name="xxx" value="xxx 10"/>
 	</bean>
 	
 	<!-- Application09 -->	
@@ -1474,6 +1488,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker4Worker"/>
 		<property name="job" ref="job12"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 9"/>
+		<property name="xxx" value="xxx 9"/>
 	</bean>
 	
 	<!-- Application08 -->	
@@ -1488,6 +1504,8 @@
 		<property name="justification" value="justification08" />
 		<property name="worker" ref="worker4Worker"/>
 		<property name="job" ref="job13"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 8"/>
+		<property name="xxx" value="xxx 8"/>
 	</bean>
 	
 	<!-- Application07 -->	
@@ -1502,6 +1520,8 @@
 		<property name="justification" value="justification07" />
 		<property name="worker" ref="worker7Worker"/>
 		<property name="job" ref="job08"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 7"/>
+		<property name="xxx" value="xxx 7"/>
 	</bean>
 	
 	<!-- Application06 -->	
@@ -1516,6 +1536,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker7Worker"/>
 		<property name="job" ref="job08"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 8"/>
+		<property name="xxx" value="xxx 8"/>
 	</bean>
 	
 	<!-- Application05 -->	
@@ -1530,6 +1552,8 @@
 		<property name="justification" value="justification05" />
 		<property name="worker" ref="worker7Worker"/>
 		<property name="job" ref="job14"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 5"/>
+		<property name="xxx" value="xxx 5"/>
 	</bean>
 	
 	<!-- Application04 -->	
@@ -1544,6 +1568,8 @@
 		<property name="justification" value="justification04" />
 		<property name="worker" ref="worker3Worker"/>
 		<property name="job" ref="job15"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 4"/>
+		<property name="xxx" value="xxx 4"/>
 	</bean>
 	
 	<!-- Application03 -->	
@@ -1558,6 +1584,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker3Worker"/>
 		<property name="job" ref="job03"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 3"/>
+		<property name="xxx" value="xxx 3"/>
 	</bean>
 	
 	<!-- Application02 -->	
@@ -1572,6 +1600,8 @@
 		<property name="justification"><null /></property>
 		<property name="worker" ref="worker2Worker"/>
 		<property name="job" ref="job02"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 2"/>
+		<property name="xxx" value="xxx 2"/>
 	</bean>
 	
 	<!-- Application01 -->	
@@ -1586,6 +1616,8 @@
 		<property name="justification" value="justification01" />
 		<property name="worker" ref="worker1Worker"/>
 		<property name="job" ref="job01"/>
+		<property name="XXXRequestResponse" value="XXXRequestResponse 1"/>
+		<property name="xxx" value="xxx 1"/>
 	</bean>
 	
 	<!-- Messagethread01 -->	
@@ -2055,7 +2087,7 @@
 		<property name="rewardBronze" value="100€"/>
 	</bean>
 	
-	<!-- XXXRequest //Todo: Cambiar TODOS -->
+	<!-- XXXRequest //TODO: Cambiar TODOS -->
 	
 	<bean id="XXXRequest01" class="acme.entities.xxxrequests.XXXRequest">
 		<property name="text" value="Text 1"/>

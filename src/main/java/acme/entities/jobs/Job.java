@@ -71,6 +71,6 @@ public class Job extends DomainEntity {
 	private Employer			employer;
 
 	@OneToOne(optional = true)
-	//Todo: Cambiar
+	//TODO: Cambiar
 	private XXXRequest			xxxRequest;
 }

@@ -60,6 +60,12 @@ public class Application extends DomainEntity {
 
 	private String				justification;
 
+	//TODO: Cambiar
+	private String				XXXRequestResponse;
+
+	//TODO: Cambiar
+	private String				xxx;
+
 	//Relationships ---------------------------------------
 
 	@NotNull
