@@ -1243,7 +1243,7 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"/>
 		<property name="employer" ref="employer3Employer"/>
-		<property name="xxxRequest" ref="xxxRequest03"/>
+		<property name="xxxRequest" ref="XXXRequest03"/>
 	</bean>
 	
 	<!-- Job02 -->	
@@ -1257,7 +1257,7 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer2Employer"/>
-		<property name="xxxRequest" ref="xxxRequest02"/>
+		<property name="xxxRequest" ref="XXXRequest02"/>
 	</bean>
 	
 	<!-- Job01  //Todo: Cambiar TODOS-->	
@@ -1271,7 +1271,7 @@
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"/>
 		<property name="employer" ref="employer1Employer"/>
-		<property name="xxxRequest" ref="xxxRequest01"/>
+		<property name="xxxRequest" ref="XXXRequest01"/>
 	</bean>
 	
 	<!-- Duty10 -->	
@@ -2060,16 +2060,16 @@
 	<bean id="XXXRequest01" class="acme.entities.xxxrequests.XXXRequest">
 		<property name="text" value="Text 1"/>
 		<property name="xxx" value="https://sevius.us.es/"/>
-		<property name="password" value="Password 1"/>
+		<property name="password" value="Password"/>
 	</bean>
 	<bean id="XXXRequest02" class="acme.entities.xxxrequests.XXXRequest">
 		<property name="text" value="Text 2"/>
 		<property name="xxx" value="https://sevius.us.es/"/>
-		<property name="password" value="Password 2"/>
+		<property name="password" value="Password"/>
 	</bean>
 		<bean id="XXXRequest03" class="acme.entities.xxxrequests.XXXRequest">
 		<property name="text" value="Text 3"/>
 		<property name="xxx" value="https://sevius.us.es/"/>
-		<property name="password" value="Password 3"/>
+		<property name="password" value="Password"/>
 	</bean>
 </beans>

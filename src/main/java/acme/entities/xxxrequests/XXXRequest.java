@@ -30,7 +30,7 @@ public class XXXRequest extends DomainEntity {
 
 	@NotBlank
 	//Todo: Cambiar
-	@Pattern(regexp = "")
+	@Pattern(regexp = "([A-Z])\\w+")
 	private String				password;
 
 }

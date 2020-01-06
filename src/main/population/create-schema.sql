@@ -175,6 +175,7 @@
         `salary_currency` varchar(255),
         `title` varchar(255),
         `employer_id` integer not null,
+        `xxx_request_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -292,6 +293,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `xxxrequest` (
+       `id` integer not null,
+        `version` integer not null,
+        `password` varchar(255),
+        `text` varchar(255),
+        `xxx` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -400,6 +410,11 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
+
+    alter table `job` 
+       add constraint `FKeie53129vcegd5ciwck6jpb5c` 
+       foreign key (`xxx_request_id`) 
+       references `xxxrequest` (`id`);
 
     alter table `message` 
        add constraint `FK3ny0h1379q528toyokq81noiu` 

@@ -55,6 +55,10 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `job` 
+       drop 
+       foreign key `FKeie53129vcegd5ciwck6jpb5c`;
+
     alter table `message` 
        drop 
        foreign key `FK3ny0h1379q528toyokq81noiu`;
@@ -144,5 +148,7 @@
     drop table if exists `user_account`;
 
     drop table if exists `worker`;
+
+    drop table if exists `xxxrequest`;
 
     drop table if exists `hibernate_sequence`;
