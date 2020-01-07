@@ -91,6 +91,10 @@
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
 
+    alter table `xxxrequest` 
+       drop 
+       foreign key `FK4c8n1u6mr15ucy5cqqbtfc6ih`;
+
     drop table if exists `administrator`;
 
     drop table if exists `announcement`;
@@ -144,5 +148,7 @@
     drop table if exists `user_account`;
 
     drop table if exists `worker`;
+
+    drop table if exists `xxxrequest`;
 
     drop table if exists `hibernate_sequence`;

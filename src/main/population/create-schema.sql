@@ -26,13 +26,16 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `xxxrequest_response` varchar(255),
         `creation_moment` datetime(6),
         `justification` varchar(255),
+        `password` varchar(255),
         `qualifications` varchar(255),
         `reference_number` varchar(255),
         `skills` varchar(255),
         `statement` varchar(255),
         `status` integer,
+        `xxx` varchar(255),
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)
@@ -292,6 +295,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `xxxrequest` (
+       `id` integer not null,
+        `version` integer not null,
+        `text` varchar(255),
+        `xxx` varchar(255),
+        `job_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `hibernate_sequence` (
        `next_val` bigint
     ) engine=InnoDB;
@@ -330,6 +342,9 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
+
+    alter table `xxxrequest` 
+       add constraint UK_9d7deulgljf13sueysh436fkd unique (`job_id`);
 
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
@@ -445,3 +460,8 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `xxxrequest` 
+       add constraint `FK4c8n1u6mr15ucy5cqqbtfc6ih` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
