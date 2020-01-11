@@ -39,10 +39,6 @@
        drop 
        foreign key `FK2jw28sba4n2gi3xdkdqqhm870`;
 
-    alter table `consumer` 
-       drop 
-       foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
-
     alter table `duty` 
        drop 
        foreign key `FKs2uoxh4i5ya8ptyefae60iao1`;
@@ -79,10 +75,6 @@
        drop 
        foreign key `FK67h73ib586xy9hvw4vyy75fvv`;
 
-    alter table `provider` 
-       drop 
-       foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
-
     alter table `sponsor` 
        drop 
        foreign key FK_20xk0ev32hlg96kqynl6laie2;
@@ -90,10 +82,6 @@
     alter table `worker` 
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
-
-    alter table `xxxrequest` 
-       drop 
-       foreign key `FK4c8n1u6mr15ucy5cqqbtfc6ih`;
 
     drop table if exists `administrator`;
 
@@ -117,8 +105,6 @@
 
     drop table if exists `companyrecord`;
 
-    drop table if exists `consumer`;
-
     drop table if exists `duty`;
 
     drop table if exists `employer`;
@@ -137,8 +123,6 @@
 
     drop table if exists `participant`;
 
-    drop table if exists `provider`;
-
     drop table if exists `request`;
 
     drop table if exists `spam`;
@@ -148,7 +132,5 @@
     drop table if exists `user_account`;
 
     drop table if exists `worker`;
-
-    drop table if exists `xxxrequest`;
 
     drop table if exists `hibernate_sequence`;
