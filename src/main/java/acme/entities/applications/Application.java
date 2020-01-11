@@ -60,16 +60,6 @@ public class Application extends DomainEntity {
 
 	private String				justification;
 
-	//TODO: Cambiar
-	private String				XXXRequestResponse;
-
-	//TODO: Cambiar
-	private String				xxx;
-
-	//TODO: Cambiar
-	//	@Pattern(regexp = "([A-Z])\\w+")
-	private String				password;
-
 	//Relationships ---------------------------------------
 
 	@NotNull
