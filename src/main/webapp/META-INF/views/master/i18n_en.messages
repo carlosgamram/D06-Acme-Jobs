@@ -63,18 +63,6 @@ master.menu.authenticated.investorrecords = List investor records
 master.menu.authenticated.messagethread.mine = List Mine MessageThread
 master.menu.authenticated.job.active = List active jobs
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
-master.menu.provider.request.create = New request
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumer
-master.menu.consumer.create = New offer
-
-
 # master.menu.sponsor #########################################################
 
 master.menu.sponsor = Sponsor
