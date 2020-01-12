@@ -17,6 +17,7 @@ default.placeholder.money = EUR 123,456.78
 default.placeholder.double = 123,456.78
 default.placeholder.integer = 123,456
 default.placeholder.url = http://www.acme.com
+default.placeholder.phone = “+1 123456”, “+44 (0) 123-456”, “+34 123 456 789”, “+012 (0345) 678-900”
 
 default.error.conversion = Invalid value
 default.error.endpoint-unavailable = End-point not available
