@@ -37,7 +37,7 @@
 
     alter table `commercial` 
        drop 
-       foreign key `FK2jw28sba4n2gi3xdkdqqhm870`;
+       foreign key FK_tk5yvuytfoa0dgtibahrxwwkd;
 
     alter table `duty` 
        drop 
@@ -65,7 +65,7 @@
 
     alter table `noncommercial` 
        drop 
-       foreign key `FKn6bojnyiiial7yvedm9obcdrc`;
+       foreign key FK_i5qh4ffwjtnte674cdprjt07w;
 
     alter table `participant` 
        drop 

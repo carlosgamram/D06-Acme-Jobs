@@ -66,6 +66,7 @@
 			</div>			
 		</div>
 		<%@include file="../master/footer.jsp"%>
+		<%@include file="../master/bannerFooter.jsp"%>
 		<acme:debug-information system="false"/>	
 	</body>
 </html>
