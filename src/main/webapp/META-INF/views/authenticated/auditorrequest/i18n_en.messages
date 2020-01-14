@@ -18,6 +18,6 @@ authenticated.auditorrequest.form.button.return = Return
 authenticated.auditorrequest.form.errors.spam.firm = Spam control alert
 authenticated.auditorrequest.form.errors.spam.responsibility = Spam control alert
 
-authenticated.auditorrequest.form.label.isAccepted = Is accepted
-authenticated.auditorrequest.form.label.isDenied = Is denied
-authenticated.auditorrequest.form.label.isPending = Is pending
+authenticated.auditorrequest.form.label.isAccepted = The request is accepted, thanks
+authenticated.auditorrequest.form.label.isDenied = The request is denied, sorry
+authenticated.auditorrequest.form.label.isPending = The request is pending, wait to administrador accepted
