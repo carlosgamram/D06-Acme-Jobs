@@ -50,8 +50,16 @@ public class AuthenticatedAuditorrequestCreateService implements AbstractCreateS
 		int id = request.getPrincipal().getActiveRoleId();
 		Auditorrequest ar = this.repository.findOneByAuthenticatedId(id);
 		boolean hasRequest = ar != null;
+		boolean isAccepted = ar != null;
+
+		if (isAccepted) {
+			isAccepted = ar.getStatus() != null ? ar.getStatus() : false;
+		}
+		boolean isPending = ar.getStatus() == null;
 
 		model.setAttribute("hasRequest", hasRequest);
+		model.setAttribute("isAccepted", isAccepted);
+		model.setAttribute("isPending", isPending);
 
 		request.unbind(entity, model, "firm", "responsibility", "status");
 	}

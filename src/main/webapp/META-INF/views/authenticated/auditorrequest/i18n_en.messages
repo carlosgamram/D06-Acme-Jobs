@@ -17,3 +17,7 @@ authenticated.auditorrequest.form.button.return = Return
 
 authenticated.auditorrequest.form.errors.spam.firm = Spam control alert
 authenticated.auditorrequest.form.errors.spam.responsibility = Spam control alert
+
+authenticated.auditorrequest.form.label.isAccepted = Is accepted
+authenticated.auditorrequest.form.label.isDenied = Is denied
+authenticated.auditorrequest.form.label.isPending = Is pending
