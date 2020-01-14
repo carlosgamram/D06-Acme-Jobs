@@ -19,17 +19,16 @@ public class PhoneFormatter implements Formatter<Phone> {
 		assert object != null;
 		assert locale != null;
 
-		return object.toString();
-		//		String result;
-		//		String countryCodeText, areaCodeText, numberText;
-		//
-		//		countryCodeText = String.format("+%d", object.getCountryCode());
-		//		areaCodeText = object.getAreaCode() == null ? " " : String.format(" (+%d) ", object.getAreaCode());
-		//		numberText = String.format("%s", object.getNumber());
-		//
-		//		result = String.format("+%d%s%ld", countryCodeText, areaCodeText, numberText);
-		//
-		//		return result;
+		String result;
+		String countryCodeText, areaCodeText, numberText;
+
+		countryCodeText = String.format("%d", object.getCountryCode());
+		areaCodeText = object.getAreaCode() == null ? " " : String.format(" (%s) ", object.getAreaCode());
+		numberText = String.format("%s", object.getNumber());
+
+		result = String.format("+%s%s%s", countryCodeText, areaCodeText, numberText);
+
+		return result;
 	}
 
 	@Override
