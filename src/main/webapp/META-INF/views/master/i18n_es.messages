@@ -86,6 +86,7 @@ master.menu.sponsor.noncommercial.list = Anuncios no comerciales
 master.menu.worker = Trabajador
 master.menu.worker.aplication.list = Trabajos aplicados
 master.menu.worker.job.list = Listado Trabajos aplicados
+master.menu.worker.job.list-all-active = Listar todos los trabajos activos
 
 
 # master.menu.employer ########################################################
