@@ -100,13 +100,13 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `url` varchar(255),
+        `sponsor_id` integer not null,
         `credit_cardcvv` integer,
         `credit_card_month` integer,
         `credit_card_name` varchar(255),
         `credit_card_number` varchar(255),
         `credit_card_type` varchar(255),
         `credit_card_year` integer,
-        `sponsor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -196,8 +196,8 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `url` varchar(255),
-        `jingle` varchar(255),
         `sponsor_id` integer not null,
+        `jingle` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -362,7 +362,7 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        references `user_account` (`id`);
 
     alter table `commercial` 
-       add constraint `FK2jw28sba4n2gi3xdkdqqhm870` 
+       add constraint FK_tk5yvuytfoa0dgtibahrxwwkd 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
@@ -397,7 +397,7 @@ create index IDXaprx2guy3uhcnkjql0kk9qji4 on `request` (`deadline`, `ticker`);
        references `authenticated` (`id`);
 
     alter table `noncommercial` 
-       add constraint `FKn6bojnyiiial7yvedm9obcdrc` 
+       add constraint FK_i5qh4ffwjtnte674cdprjt07w 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 

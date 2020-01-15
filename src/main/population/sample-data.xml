@@ -1745,19 +1745,6 @@
 	<!-- Banners -->	
 	
 	<bean id="commercial01" class="acme.entities.banners.Commercial">
-		<property name="picture" value="http://www.us.es/design/USsite/images/logo.jpg"/>
-		<property name="slogan" value="Universidad de sevilla"/>
-		<property name="url" value="http://www.us.es"/>
-		<property name="creditCardName" value="Nombre1Apellido1Apellido2"/>
-		<property name="creditCardNumber" value="1111222233334444"/>
-		<property name="creditCardMonth" value="12"/>
-		<property name="creditCardYear" value="2023"/>
-		<property name="creditCardType" value="Visa"/>
-		<property name="creditCardCVV" value="330"/>
-		<property name="sponsor" ref="sponsor1Sponsor"/>
-	</bean>
-	
-	<bean id="commercial02" class="acme.entities.banners.Commercial">
 		<property name="picture" value="https://www.informatica.us.es/images/logo-etsii251.png"/>
 		<property name="slogan" value="Escuela Superior de Ingeniería Informática"/>
 		<property name="url" value="https://www.informatica.us.es/"/>
@@ -1771,6 +1758,46 @@
 	</bean>
 	
 	<bean id="noncommercial01" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="slogan" value="Our planet needs superheroes like you"/>
+		<property name="url" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="jingle" value="https://i.imgur.com/8YcXhS0.png"/>
+		<property name="sponsor" ref="sponsor1Sponsor"/>
+	</bean>
+	
+	<bean id="noncommercial02" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="slogan" value="what would you change?"/>
+		<property name="url" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="jingle" value="https://i.imgur.com/NGLSjk6.png"/>
+		<property name="sponsor" ref="sponsor1Sponsor"/>
+	</bean>
+	
+	<bean id="noncommercial03" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="slogan" value="afoprodei"/>
+		<property name="url" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="jingle" value="https://i.imgur.com/2eVF1HG.png"/>
+		<property name="sponsor" ref="sponsor2Sponsor"/>
+	</bean>
+	
+	<bean id="noncommercial04" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="slogan" value="Fundación El Gancho"/>
+		<property name="url" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="jingle" value="https://i.imgur.com/fihihcF.png"/>
+		<property name="sponsor" ref="sponsor2Sponsor"/>
+	</bean>
+	
+	<bean id="noncommercial05" class="acme.entities.banners.Noncommercial">
+		<property name="picture" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="slogan" value="Medecins sans frontieres"/>
+		<property name="url" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="jingle" value="https://i.imgur.com/MtBRoNP.png"/>
+		<property name="sponsor" ref="sponsor3Sponsor"/>
+	</bean>
+	
+<!-- 	<bean id="noncommercial06" class="acme.entities.banners.Noncommercial">
 		<property name="picture" value="https://www.informatica.us.es/images/logo-etsii251.png"/>
 		<property name="slogan" value="Escuela Superior de Ingeniería Informática"/>
 		<property name="url" value="https://www.informatica.us.es/"/>
@@ -1778,7 +1805,7 @@
 		<property name="sponsor" ref="sponsor2Sponsor"/>
 	</bean>
 	
-		<bean id="noncommercial02" class="acme.entities.banners.Noncommercial">
+		<bean id="noncommercial07" class="acme.entities.banners.Noncommercial">
 		<property name="picture" value="https://www.informatica.us.es/images/logo-etsii251.png"/>
 		<property name="slogan" value="Escuela Superior de Ingeniería Informática"/>
 		<property name="url" value="https://www.informatica.us.es/"/>
@@ -1786,7 +1813,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 	</bean>
 	
-		<bean id="noncommercial03" class="acme.entities.banners.Noncommercial">
+		<bean id="noncommercial08" class="acme.entities.banners.Noncommercial">
 		<property name="picture" value="https://www.informatica.us.es/images/logo-etsii251.png"/>
 		<property name="slogan" value="Escuela Superior de Ingeniería Informática"/>
 		<property name="url" value="https://www.informatica.us.es/"/>
@@ -1795,13 +1822,13 @@
 	</bean>
 	
 	
-	<bean id="noncommercial04" class="acme.entities.banners.Noncommercial">
+	<bean id="noncommercial09" class="acme.entities.banners.Noncommercial">
 		<property name="picture" value="https://www.etsi.us.es/sites/all/themes/ETSI/imagenes/marco/logoETSI.png"/>
 		<property name="slogan" value="Escuela Superior de Ingeniería de Sevilla"/>
 		<property name="url" value="https://www.etsi.us.es/"/>
 		<property name="jingle"><null/></property>
 		<property name="sponsor" ref="sponsor3Sponsor"/>
-	</bean>
+	</bean> -->
 
 	<!-- Investorrecord -->
   
