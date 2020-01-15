@@ -53,6 +53,7 @@
 		
 		canvas = document.getElementById("canvas");
 		context = canvas.getContext("2d");
+		
 		new Chart(context,{
 			type : "bar",
 			data : data,

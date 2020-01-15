@@ -17,3 +17,7 @@ authenticated.auditorrequest.form.button.return = Volver
 
 authenticated.auditorrequest.form.errors.spam.firm = Alerta control spam
 authenticated.auditorrequest.form.errors.spam.responsibility = Alerta control spam
+
+authenticated.auditorrequest.form.label.isAccepted = La solicitud esta aceptada , gracias
+authenticated.auditorrequest.form.label.isDenied = La solicitud esta aceptada , perdone las molestias
+authenticated.auditorrequest.form.label.isPending = La solicitud esta pendiente , espere a que el administrator acepte la solicitud

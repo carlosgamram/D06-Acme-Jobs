@@ -79,16 +79,6 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		Double sumPercentageOfTime = this.repository.sumPercentageOfTimeByJobId(entity.getJob().getId());
-		if (sumPercentageOfTime != null) {
-			Double sumPercentageOfTimeTotal = sumPercentageOfTime + entity.getPercentageOfTime();
-			if (sumPercentageOfTime == 100L) {
-				errors.state(request, false, "percentageOfTime", "employer.duty.form.errors.percentageOfTime.limit");
-			} else if (sumPercentageOfTimeTotal > 100L) {
-				errors.state(request, false, "percentageOfTime", "employer.duty.form.errors.percentageOfTime", 100 - sumPercentageOfTime);
-			}
-		}
-
 		errors.state(request, !this.spamUtils.checkSpam(entity.getTitle()), "title", "employer.duty.form.errors.spam.title");
 		errors.state(request, !this.spamUtils.checkSpam(entity.getDescription()), "description", "employer.duty.form.errors.spam.description");
 
