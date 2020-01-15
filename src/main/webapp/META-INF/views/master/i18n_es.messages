@@ -84,14 +84,16 @@ master.menu.sponsor.noncommercial.list = Anuncios no comerciales
 # master.menu.worker ######################################################
 
 master.menu.worker = Trabajador
-master.menu.worker.aplication.list = Trabajos aplicados
-master.menu.worker.job.list = Listado Trabajos aplicados
+
+master.menu.worker.aplication.list = Solicitudes a trabajos
+master.menu.worker.job.list = Listado Trabajos solicitados
 master.menu.worker.job.list-all-active = Listar todos los trabajos activos
+
 
 
 # master.menu.employer ########################################################
 
-master.menu.employer = Empleado
+master.menu.employer = Empleador
 master.menu.employer.job.create = Crear trabajo
 master.menu.employer.job.list = Mis trabajos
 master.menu.employer.application.list = Solicitudes a mis trabajos
@@ -114,8 +116,8 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.worker = Datos de trabajador
-master.menu.user-account.become-employer = Hazte empleado
-master.menu.user-account.employer = Datos de empleado
+master.menu.user-account.become-employer = Hazte empleador
+master.menu.user-account.employer = Datos de empleador
 master.menu.user-account.auditorrequest = Solicita ser auditor
 master.menu.user-account.auditor = Datos de auditor
 master.menu.user-account.become-sponsor = Hazte sponsor

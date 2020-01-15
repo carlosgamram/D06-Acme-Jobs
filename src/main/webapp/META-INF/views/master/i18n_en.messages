@@ -72,7 +72,7 @@ master.menu.sponsor.noncommercial.list = Non commercial banners
 # master.menu.worker ######################################################
 
 master.menu.worker = Worker
-master.menu.worker.aplication.list = Aplicated Jobs
+master.menu.worker.aplication.list = Aplications to jobs
 master.menu.worker.job.list = List Aplicated Jobs
 master.menu.worker.job.list-all-active = List all active jobs
 

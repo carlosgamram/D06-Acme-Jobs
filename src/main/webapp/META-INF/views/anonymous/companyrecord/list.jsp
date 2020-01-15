@@ -17,9 +17,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list >
-	<acme:list-column code="anonymous.companyrecord.list.label.name" path="name" width="30%"/>
-	<acme:list-column code="anonymous.companyrecord.list.label.sector" path="sector" width="30%"/>	
+	<acme:list-column code="anonymous.companyrecord.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="anonymous.companyrecord.list.label.sector" path="sector" width="20%"/>	
 	<acme:list-column code="anonymous.companyrecord.list.label.phone" path="phone" width="40%"/>		
+	<acme:list-column code="anonymous.companyrecord.list.label.stars" path="stars" width="20%"/>		
 </acme:list>
 
 
