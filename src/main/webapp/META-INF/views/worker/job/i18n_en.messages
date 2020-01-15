@@ -18,6 +18,7 @@ worker.job.form.label.description=Description
 worker.job.form.button.employer=Employer
 worker.job.form.button.duty=Duties
 worker.job.form.button.auditrecord=Audit records
+worker.job.form.button.apply = Apply
 
 worker.job.form.button.return = Return
 

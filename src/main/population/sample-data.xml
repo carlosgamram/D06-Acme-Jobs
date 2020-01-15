@@ -2011,6 +2011,34 @@
 		<property name="text" value="Texto del anuncio 4, este está en fecha hoy 26 de octubre"/>
 	</bean>
 	
+	<bean id="announcement05" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Announcement 5"/>
+		<property name="moment" value="2020/01/14 12:00"/>
+		<property name="url"><null/></property>
+		<property name="text" value="Texto del anuncio 5"/>
+	</bean>
+	
+	<bean id="announcement06" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Announcement 6"/>
+		<property name="moment" value="2020/01/13 12:00"/>
+		<property name="url" value="https://sevius.us.es/"/>
+		<property name="text" value="Texto del anuncio 6"/>
+	</bean>
+	
+	<bean id="announcement07" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Announcement 7"/>
+		<property name="moment" value="2020/01/15 01:00"/>
+		<property name="url"><null/></property>
+		<property name="text" value="Texto del anuncio 7"/>
+	</bean>
+	
+	<bean id="announcement08" class="acme.entities.announcements.Announcement">
+		<property name="title" value="Announcement 8"/>
+		<property name="moment" value="2020/01/12 12:00"/>
+		<property name="url" value="https://sevius.us.es/"/>
+		<property name="text" value="Texto del anuncio 8"/>
+	</bean>
+	
 	<!-- Challenge -->
 	
 	<bean id="challenge01" class="acme.entities.challenges.Challenge">
