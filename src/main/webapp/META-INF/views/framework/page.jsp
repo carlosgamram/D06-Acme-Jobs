@@ -53,7 +53,7 @@
 	</head>
 	
 	<body class="container-fluid mt-3">
-		<%@include file="../master/banner.jsp"%>
+	 	<%@include file="../master/banner.jsp"%> 
 		<%@include file="../master/menu.jsp"%>
 		<div class="panel mt-5 mb-5">
 			<jstl:if test="${page_title != null }">
@@ -66,7 +66,7 @@
 			</div>			
 		</div>
 		<%@include file="../master/footer.jsp"%>
-		<%@include file="../master/bannerFooter.jsp"%>
+ 		<%@include file="../master/bannerFooter.jsp"%> 
 		<acme:debug-information system="false"/>	
 	</body>
 </html>

@@ -25,6 +25,4 @@ public interface EmployerDutyRepository extends AbstractRepository {
 	@Query("select sum(d.percentageOfTime) from Duty d where d.job.id = ?1")
 	Double sumPercentageOfTimeByJobId(int id);
 
-	@Query("select sum(d.percentageOfTime) from Duty d where d.job.id = ?1 and d.id != ?2")
-	Double sumPercentageOfTimeByJobIdWithoutDutyId(int jobId, int dutyId);
 }
