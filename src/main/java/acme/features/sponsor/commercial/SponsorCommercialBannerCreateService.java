@@ -58,8 +58,8 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 
 		sponsor = this.repository.findSponsorById(principal.getActiveRoleId());
 
-		result.setCreditCardMonth(12);
-		result.setCreditCardYear(1234);
+		//result.setCreditCardMonth(12);
+		//result.setCreditCardYear(1234);
 		result.setSponsor(sponsor);
 
 		return result;
