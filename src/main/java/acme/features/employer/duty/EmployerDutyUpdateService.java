@@ -76,16 +76,6 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		Double sumPercentageOfTime = this.repository.sumPercentageOfTimeByJobIdWithoutDutyId(entity.getJob().getId(), entity.getId());
-		if (sumPercentageOfTime != null) {
-			Double sumPercentageOfTimeTotal = sumPercentageOfTime + entity.getPercentageOfTime();
-			if (sumPercentageOfTime == 100L) {
-				errors.state(request, false, "percentageOfTime", "employer.duty.form.errors.percentageOfTime.limit");
-			} else if (sumPercentageOfTimeTotal > 100L) {
-				errors.state(request, false, "percentageOfTime", "employer.duty.form.errors.percentageOfTime", 100 - sumPercentageOfTime);
-			}
-		}
-
 		if (errors.hasErrors("percentageOfTime")) {
 			request.getModel().setAttribute("job", entity.getJob());
 		}
