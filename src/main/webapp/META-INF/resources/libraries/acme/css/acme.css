@@ -38,6 +38,13 @@ div.dropdown-menu {
 	background-color: #343a40 !important;
 }
 
+.reduceGraph{
+	height: 50%;
+	width: 50%;
+	margin-right: auto; 
+	margin-left: auto
+}
+
 a.dropdown-item {
 	color: #fff !important;
 }

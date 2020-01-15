@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas"></canvas>
 </div>
 
@@ -53,7 +53,6 @@
 		
 		canvas = document.getElementById("canvas");
 		context = canvas.getContext("2d");
-		
 		new Chart(context,{
 			type : "bar",
 			data : data,
@@ -63,7 +62,7 @@
 	});	
 </script>
 									
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas2"></canvas>
 </div>
 
@@ -109,7 +108,7 @@
 		
 	});	
 </script>
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas3"></canvas>
 </div>
 
@@ -154,7 +153,7 @@
 	});	
 </script>
 
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas4"></canvas>
 </div>
 
@@ -201,7 +200,7 @@
 	});	
 </script>
 
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas5"></canvas>
 </div>
 
@@ -248,7 +247,7 @@
 		
 	});	
 </script>	
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas6"></canvas>
 </div>
 
@@ -296,7 +295,7 @@
 	});	
 </script>
 
-<div>
+<div class="reduceGraph">
 	<canvas id="canvas7"></canvas>
 </div>
 
